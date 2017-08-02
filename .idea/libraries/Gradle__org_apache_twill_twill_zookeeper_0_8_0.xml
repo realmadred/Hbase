@@ -1,0 +1,11 @@
+<component name="libraryTable">
+  <library name="Gradle: org.apache.twill:twill-zookeeper:0.8.0">
+    <CLASSES>
+      <root url="jar://$USER_HOME$/.gradle/caches/modules-2/files-2.1/org.apache.twill/twill-zookeeper/0.8.0/30cf63f2195d655cf0b87fe3df0efbe55ffaf442/twill-zookeeper-0.8.0.jar!/" />
+    </CLASSES>
+    <JAVADOC />
+    <SOURCES>
+      <root url="jar://$USER_HOME$/.gradle/caches/modules-2/files-2.1/org.apache.twill/twill-zookeeper/0.8.0/9e163c340229192a791289521137c7e2fbea0518/twill-zookeeper-0.8.0-sources.jar!/" />
+    </SOURCES>
+  </library>
+</component>

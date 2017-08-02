@@ -1,0 +1,11 @@
+<component name="libraryTable">
+  <library name="Gradle: org.apache.twill:twill-common:0.8.0">
+    <CLASSES>
+      <root url="jar://$USER_HOME$/.gradle/caches/modules-2/files-2.1/org.apache.twill/twill-common/0.8.0/e941d3900c2d4101dc3017d0614437d86680a1b1/twill-common-0.8.0.jar!/" />
+    </CLASSES>
+    <JAVADOC />
+    <SOURCES>
+      <root url="jar://$USER_HOME$/.gradle/caches/modules-2/files-2.1/org.apache.twill/twill-common/0.8.0/f383af9763f8dbde379327a7984e8b21f6edcc37/twill-common-0.8.0-sources.jar!/" />
+    </SOURCES>
+  </library>
+</component>

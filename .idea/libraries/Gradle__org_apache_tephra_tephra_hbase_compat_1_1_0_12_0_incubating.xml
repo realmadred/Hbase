@@ -1,0 +1,11 @@
+<component name="libraryTable">
+  <library name="Gradle: org.apache.tephra:tephra-hbase-compat-1.1:0.12.0-incubating">
+    <CLASSES>
+      <root url="jar://$USER_HOME$/.gradle/caches/modules-2/files-2.1/org.apache.tephra/tephra-hbase-compat-1.1/0.12.0-incubating/40566621ff2145c9ef9e65bca62a985d9a1818a1/tephra-hbase-compat-1.1-0.12.0-incubating.jar!/" />
+    </CLASSES>
+    <JAVADOC />
+    <SOURCES>
+      <root url="jar://$USER_HOME$/.gradle/caches/modules-2/files-2.1/org.apache.tephra/tephra-hbase-compat-1.1/0.12.0-incubating/4c8e8faa5a687adc8b8a3510bdc7f97a4da5db7a/tephra-hbase-compat-1.1-0.12.0-incubating-sources.jar!/" />
+    </SOURCES>
+  </library>
+</component>
