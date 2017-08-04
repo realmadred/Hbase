@@ -9,13 +9,13 @@ public class PageCondition {
 
     private final static int DEFAULT_SIZE = 10;
     private final static int DEFAULT_PAGE = 1;
-    private int size = DEFAULT_SIZE;
     private int page = DEFAULT_PAGE;
+    private int size = DEFAULT_SIZE;
 
     public PageCondition() {
     }
 
-    public PageCondition(int size, int page) {
+    public PageCondition(int page, int size) {
         setSize(size);
         setPage(page);
     }
@@ -25,7 +25,7 @@ public class PageCondition {
     }
 
     public PageCondition setSize(int size) {
-        if (size <= 0 || size > 100){
+        if (size <= 0 || size > 100) {
             return this;
         }
         this.size = size;
@@ -45,6 +45,7 @@ public class PageCondition {
      * 获取起始行
      * lf
      * 2017-08-03 10:12:47
+     *
      * @return
      */
     public int getStart() {

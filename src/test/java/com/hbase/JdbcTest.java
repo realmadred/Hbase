@@ -19,7 +19,7 @@ public class JdbcTest {
 
     @Test
     public void test1(){
-        List<Map<String, Object>> map = template.queryForList("SELECT * FROM x_car_run_log");
+        List<Map<String, Object>> map = template.queryForList("SELECT * FROM x_car_run_log WHERE  id = 1", new Object[0]);
         System.out.println(map.size());
     }
 

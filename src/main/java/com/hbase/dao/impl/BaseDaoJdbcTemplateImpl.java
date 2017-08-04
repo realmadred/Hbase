@@ -1,9 +1,7 @@
 package com.hbase.dao.impl;
 
 import com.hbase.dao.BaseDao;
-import com.hbase.entity.jdbc.ColumnOps;
-import com.hbase.entity.jdbc.Condition;
-import com.hbase.entity.jdbc.QueryCondition;
+import com.hbase.entity.jdbc.*;
 import com.hbase.utils.Common;
 import org.apache.commons.lang.StringUtils;
 import org.slf4j.Logger;
@@ -30,12 +28,15 @@ import static com.hbase.dao.impl.BaseDaoJdbcTemplateImpl.KeyWord.*;
 public class BaseDaoJdbcTemplateImpl implements BaseDao {
 
     private static final Logger LOGGER = LoggerFactory.getLogger(BaseDaoJdbcTemplateImpl.class);
+    private static final String TO_TRIM = "1 = 1  AND "; // 这个sql片段trim掉
 
     @Autowired
     private JdbcTemplate template;
 
     private static final Map<String, Object> EMPTY_MAP = new HashMap<>(0);
     private static final List<Map<String, Object>> EMPTY_LIST = new ArrayList<>(0);
+    private static final String SEPARATOR = ",";
+    private static final String PARAM = "?";
 
     /**
      * 根据id查询
@@ -53,129 +54,58 @@ public class BaseDaoJdbcTemplateImpl implements BaseDao {
                 .append(SELECT)
                 .append(fields).append(FROM)
                 .append(table).append(WHERE_ID);
-        LOGGER.info(">>>>>>>>sql:{}\n args:{}",sql,id);
+        LOGGER.info(">>>>>>>>sql:{}\n args:{}", sql, id);
         return template.queryForMap(sql.toString(), id);
     }
 
     /**
      * 查询数量
      *
-     * @param table        表
-     * @param conditionMap 条件
+     * @param table     表
+     * @param condition 查询条件
      * @return 数量
      */
     @Override
-    public int findCount(String table, Map<ColumnOps, Object> conditionMap) {
+    public int findCount(String table, Condition condition) {
         // 判断参数
         if (StringUtils.isBlank(table)) return 0;
         StringBuilder sql = new StringBuilder();
         sql.append(SELECT_COUNT_FROM).append(table);
         // 判断条件
-        if (!CollectionUtils.isEmpty(conditionMap)) {
-            sql.append(WHERE);
-            Object[] args = new Object[conditionMap.size()];
-            handleArgs(conditionMap, sql, args);
-            LOGGER.info(">>>>>>>>sql:{}\n args:{}",sql,Arrays.toString(args));
-            return template.queryForObject(sql.toString(), Integer.class, args);
+        if (condition == null) {
+            return template.queryForObject(sql.toString(), Integer.class);
         }
-        LOGGER.info(">>>>>>>>sql:{}\n args:{}",sql);
-        return template.queryForObject(sql.toString(), Integer.class);
-    }
-
-    /**
-     * 查询数量
-     *
-     * @param table        表
-     * @param conditionMap 条件
-     * @param condition    in between
-     * @return 数量
-     */
-    @Override
-    public int findCount(String table, Map<ColumnOps, Object> conditionMap, Condition condition) {
-        // 判断参数
-        if (StringUtils.isBlank(table)) return 0;
-        StringBuilder sql = new StringBuilder();
-        sql.append(SELECT_COUNT_FROM).append(table)
-                .append(WHERE);
-        // 判断条件
-        if (condition != null) {
-            sql.append(condition);
-        }
-        if (CollectionUtils.isEmpty(conditionMap)) return template.queryForObject(sql.toString(), Integer.class);
-        Object[] args = new Object[conditionMap.size()];
-        // 处理参数
-        handleArgs(conditionMap, sql, args);
-        LOGGER.info(">>>>>>>>sql:{}\n args:{}",sql,Arrays.toString(args));
-        return template.queryForObject(sql.toString(), Integer.class, args);
-    }
-
-    /**
-     * 参数处理
-     *
-     * @param conditionMap 条件
-     * @param sql          sql部分
-     * @return
-     */
-    private void handleArgs(Map<ColumnOps, Object> conditionMap, StringBuilder sql, Object[] args) {
-        int i = 0;
-        for (Map.Entry<ColumnOps, Object> entry : conditionMap.entrySet()) {
-            sql.append(AND).append(entry.getKey());
-            args[i++] = entry.getValue();
-        }
+        // where条件
+        sql.append(WHERE);
+        // 参数
+        List<Object> args = new ArrayList<>();
+        handleCondition(condition, sql, args);
+        LOGGER.info(">>>>>>>>args:{}", sql, args);
+        if (args.isEmpty()) return template.queryForObject(checkSql(sql), Integer.class);
+        return template.queryForObject(checkSql(sql), Integer.class, args.toArray());
     }
 
     /**
      * 根据条件查询
      *
-     * @param table        表
-     * @param conditionMap 字段条件
-     * @param fields       查询字段
-     * @param condition    order by , having, group by , limit 条件
+     * @param table     表
+     * @param fields    查询字段
+     * @param condition 条件
      * @return
      */
     @Override
-    public List<Map<String, Object>> find(String table, String fields, Map<ColumnOps, Object> conditionMap, QueryCondition condition) {
-        if (Common.hasEmpty(table, fields)) return EMPTY_LIST;
+    public List<Map<String, Object>> find(String table, String fields, @Nonnull QueryCondition condition) {
+        if (Common.hasEmpty(table, fields, condition)) return EMPTY_LIST;
         StringBuilder sql = new StringBuilder(32);
-        sql.append(SELECT).append(fields).append(table)
-                .append(WHERE);
-        if (condition != null) {
-            sql.append(condition);
-        }
-        if (CollectionUtils.isEmpty(conditionMap)) return template.queryForList(sql.toString());
-        Object[] args = new Object[conditionMap.size()];
-        handleArgs(conditionMap, sql, args);
-        LOGGER.info(">>>>>>>>sql:{}\n args:{}",sql,Arrays.toString(args));
-        return template.queryForList(sql.toString(), args);
-    }
+        sql.append(SELECT).append(fields).append(FROM).append(table).append(WHERE);
 
-    /**
-     * 根据条件查询 都是等于
-     *
-     * @param table        表
-     * @param conditionMap 字段条件
-     * @param fields       查询字段
-     * @param condition    order by , having, group by , limit 条件
-     * @return
-     */
-    @Override
-    public List<Map<String, Object>> findByEq(String table, Map<String, Object> conditionMap, String fields, QueryCondition condition) {
-        if (Common.hasEmpty(table, fields)) return EMPTY_LIST;
-        StringBuilder sql = new StringBuilder(32);
-        sql.append(SELECT).append(fields).append(table)
-                .append(WHERE);
-        if (condition != null) {
-            sql.append(condition);
-        }
-        if (CollectionUtils.isEmpty(conditionMap)) return template.queryForList(sql.toString());
-        Object[] args = new Object[conditionMap.size()];
-        int i = 0;
-        for (Map.Entry<String, Object> entry : conditionMap.entrySet()) {
-            sql.append(AND).append(entry.getKey()).append(EQUAL_PARAM);
-            args[i++] = entry.getValue();
-        }
-        LOGGER.info(">>>>>>>>sql:{}\n args:{}",sql,Arrays.toString(args));
-        return template.queryForList(sql.toString(), args);
+        // 处理条件
+        List<Object> args = new ArrayList<>();
+        handleCondition(condition, sql, args);
+        // 追加其它的order group limit等等
+        sql.append(condition);
+        LOGGER.info(">>>>>>>>args:{}", args);
+        return template.queryForList(checkSql(sql), args.toArray());
     }
 
     /**
@@ -206,7 +136,7 @@ public class BaseDaoJdbcTemplateImpl implements BaseDao {
             }
         }
         sql.append(values);
-        LOGGER.info(">>>>>>>>sql:{}\n args:{}",sql,Arrays.toString(args));
+        LOGGER.info(">>>>>>>>sql:{}\n args:{}", sql, Arrays.toString(args));
         GeneratedKeyHolder keyHolder = new GeneratedKeyHolder();
         template.update((con) -> {
             PreparedStatement ps = con.prepareStatement(sql.toString(), Statement.RETURN_GENERATED_KEYS);
@@ -221,25 +151,21 @@ public class BaseDaoJdbcTemplateImpl implements BaseDao {
     /**
      * 删除
      *
-     * @param table        表名
-     * @param conditionMap 条件 必须要有
+     * @param table     表名
+     * @param condition 条件 必须要有
      * @return 删除的条数
      */
     @Override
-    public int delete(String table, @Nonnull Map<String, Object> conditionMap) {
+    public int delete(String table, @Nonnull Condition condition) {
         // 必须要又条件
-        if (StringUtils.isBlank(table) || CollectionUtils.isEmpty(conditionMap)) return 0;
+        if (StringUtils.isBlank(table)) return 0;
         StringBuilder sql = new StringBuilder()
                 .append(DELETE)
                 .append(table).append(WHERE);
-        Object[] args = new Object[conditionMap.size()];
-        int i = 0;
-        for (Map.Entry<String, Object> entry : conditionMap.entrySet()) {
-            sql.append(AND).append(entry.getKey()).append(EQUAL_PARAM);
-            args[i++] = entry.getValue();
-        }
-        LOGGER.info(">>>>>>>>sql:{}\n args:{}",sql,Arrays.toString(args));
-        return template.update(sql.toString(), args);
+        List<Object> args = new ArrayList<>();
+        handleCondition(condition, sql, args);
+        LOGGER.info(">>>>>>>>args:{}", args);
+        return template.update(checkSql(sql), args.toArray());
     }
 
     /**
@@ -256,49 +182,46 @@ public class BaseDaoJdbcTemplateImpl implements BaseDao {
         StringBuilder sql = new StringBuilder()
                 .append(DELETE)
                 .append(table).append(WHERE_ID);
-        LOGGER.info(sql.toString());
-        LOGGER.info(">>>>>>>>sql:{}\n args:{}",sql,id);
+        LOGGER.info(checkSql(sql));
+        LOGGER.info(">>>>>>>>sql:{}\n id:{}", sql, id);
         return template.update(sql.toString(), id);
     }
 
     /**
      * 更新数据
      *
-     * @param table     表
-     * @param data      需要更新的数据
-     * @param condition 更新条件
+     * @param table  表
+     * @param params 参数包括数据和条件
      * @return 更新的条数
      */
     @Override
-    public int update(String table, Map<String, Object> data, Map<String, Object> condition) {
+    public int update(String table, UpdateParams params) {
         // 更新必须要有条件
-        if (StringUtils.isBlank(table) ||
-                CollectionUtils.isEmpty(data) ||
-                CollectionUtils.isEmpty(condition)) return 0;
+        if (StringUtils.isBlank(table) || params == null) return 0;
         final StringBuilder sql = new StringBuilder()
                 .append(UPDATE)
                 .append(table).append(SET);
-        int size1 = data.size();
-        int size = size1 + condition.size();
-        int i = 0;
-        final Object[] args = new Object[size];
+
+        Map<String, Object> data = params.getData();
+        if (CollectionUtils.isEmpty(data)) return 0;
+
+        List<Object> args = new ArrayList<>();
         // 需要修改的字段
+        int size = data.size();
+        int i = 0;
         for (Map.Entry<String, Object> entry : data.entrySet()) {
-            args[i] = entry.getValue();
-            if (++i >= size1) {
+            args.add(entry.getValue());
+            if (++i >= size) {
                 sql.append(entry.getKey()).append(EQUAL_PARAM);
             } else {
-                sql.append(entry.getKey()).append(EQUAL_PARAM).append(",");
+                sql.append(entry.getKey()).append(EQUAL_PARAM).append(SEPARATOR);
             }
         }
         // 条件
         sql.append(WHERE);
-        for (Map.Entry<String, Object> entry : condition.entrySet()) {
-            args[i++] = entry.getValue();
-            sql.append(AND).append(entry.getKey()).append(EQUAL_PARAM);
-        }
-        LOGGER.info(">>>>>>>>sql:{}\n args:{}",sql,Arrays.toString(args));
-        return template.update(sql.toString(), args);
+        handleCondition(params, sql, args);
+        LOGGER.info(">>>>>>>>args:{}", args);
+        return template.update(checkSql(sql), args.toArray());
     }
 
     /**
@@ -330,8 +253,84 @@ public class BaseDaoJdbcTemplateImpl implements BaseDao {
         }
         sql.append(WHERE_ID);
         args[i] = id;
-        LOGGER.info(">>>>>>>>sql:{}\n args:{}",sql,Arrays.toString(args));
+        LOGGER.info(">>>>>>>>sql:{}\n args:{}", sql, Arrays.toString(args));
         return template.update(sql.toString(), args);
+    }
+
+    /**
+     * 参数处理
+     *
+     * @param conditionMap 条件
+     * @param sql          sql部分
+     * @return
+     */
+    private void handleArgs(Map<ColumnOps, Object> conditionMap, StringBuilder sql, List<Object> args) {
+        conditionMap.forEach((key, value) -> {
+            sql.append(AND).append(key);
+            args.add(value);
+        });
+    }
+
+    /**
+     * 处理条件
+     *
+     * @param condition 条件
+     * @param sql       sql
+     * @return
+     */
+    private void handleCondition(@Nonnull BaseCondition condition, StringBuilder sql, List<Object> args) {
+        Map<ColumnOps, Object> conditionMap = condition.getConditionMap();
+        Map<String, String> inMap = condition.getInMap();
+        Map<String, String> betweenMap = condition.getBetweenMap();
+
+        if (!CollectionUtils.isEmpty(conditionMap)) {
+            // 处理参数
+            handleArgs(conditionMap, sql, args);
+        }
+
+        // in
+        if (!CollectionUtils.isEmpty(inMap)) {
+            inMap.forEach((key, value) -> {
+                if (!Common.hasEmpty(key, value)) {
+                    sql.append(AND).append(key).append(IN);
+                    String[] splits = value.split(SEPARATOR);
+                    for (int i = 0, len = splits.length; i < len; i++) {
+                        if (i >= len - 1) {
+                            sql.append(PARAM).append(")");
+                            args.add(splits[i]);
+                        } else {
+                            sql.append(PARAM).append(SEPARATOR);
+                            args.add(splits[i]);
+                        }
+                    }
+                }
+            });
+        }
+
+        // between
+        if (!CollectionUtils.isEmpty(betweenMap)) {
+            betweenMap.forEach((key, value) -> {
+                if (!Common.hasEmpty(key, value) && value.contains(SEPARATOR)) {
+                    sql.append(AND).append(key).append(BETWEEN);
+                    String[] splits = value.split(SEPARATOR);
+                    sql.append(PARAM).append(SEPARATOR);
+                    args.add(splits[0]);
+                    args.add(splits[1]);
+                }
+            });
+        }
+    }
+
+    /**
+     * 统一过滤sql
+     *
+     * @param sql
+     * @return
+     */
+    private String checkSql(@Nonnull StringBuilder sql) {
+        String replace = sql.toString().replace(TO_TRIM, "");
+        LOGGER.info("--------------sql:{}", replace);
+        return replace;
     }
 
     enum KeyWord {
@@ -340,7 +339,9 @@ public class BaseDaoJdbcTemplateImpl implements BaseDao {
         UPDATE("UPDATE "),
         DELETE("DELETE FROM "),
         INSERT("INSERT INTO "),
-        VALUES("VALUES("),
+        VALUES(" VALUES("),
+        IN(" IN("),
+        BETWEEN(" BETWEEN ? AND ? "),
         WHERE(" WHERE 1 = 1 "),
         WHERE_ID(" WHERE id = ? "),
         AND(" AND "),

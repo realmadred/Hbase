@@ -1,8 +1,8 @@
 package com.hbase.dao;
 
-import com.hbase.entity.jdbc.ColumnOps;
 import com.hbase.entity.jdbc.Condition;
 import com.hbase.entity.jdbc.QueryCondition;
+import com.hbase.entity.jdbc.UpdateParams;
 
 import javax.annotation.Nonnull;
 import java.util.List;
@@ -26,24 +26,14 @@ public interface BaseDao {
      */
     Map<String, Object> findById(String table, Object id, String fields);
 
-     /**
-     * 查询数量
-     *
-     * @param table        表
-     * @param conditionMap 条件
-     * @return 数量
-     */
-    int findCount(String table, Map<ColumnOps, Object> conditionMap);
-
     /**
      * 查询数量
      *
      * @param table        表
-     * @param conditionMap 条件
-     * @param condition    in between
+     * @param condition    查询条件
      * @return 数量
      */
-    int findCount(String table, Map<ColumnOps, Object> conditionMap, Condition condition);
+    int findCount(String table,Condition condition);
 
     /**
      * 根据条件查询
@@ -54,18 +44,7 @@ public interface BaseDao {
      * @param condition       order by , having, group by , limit 条件
      * @return
      */
-    List<Map<String, Object>> find(String table, String fields, Map<ColumnOps, Object> conditionMap, QueryCondition condition);
-
-    /**
-     * 根据条件查询 都是等于
-     *
-     * @param table           表
-     * @param columnCondition 字段条件
-     * @param fields          查询字段
-     * @param condition       order by , having, group by , limit 条件
-     * @return
-     */
-    List<Map<String, Object>> findByEq(String table, Map<String, Object> conditionMap, String fields, QueryCondition condition);
+    List<Map<String, Object>> find(String table, String fields, QueryCondition condition);
 
     /**
      * 插入单条数据
@@ -83,7 +62,7 @@ public interface BaseDao {
      * @param conditionMap 条件 必须要有
      * @return 删除的条数
      */
-    int delete(String table, @Nonnull Map<String, Object> conditionMap);
+    int delete(String table, @Nonnull Condition condition);
 
     /**
      * 根据id删除
@@ -98,11 +77,10 @@ public interface BaseDao {
      * 更新数据
      *
      * @param table     表
-     * @param data      需要更新的数据
-     * @param condition 更新条件
+     * @param params    参数包括数据和条件
      * @return 更新的条数
      */
-    int update(String table, Map<String, Object> data, Map<String, Object> condition);
+    int update(String table, UpdateParams params);
 
     /**
      * 更新数据

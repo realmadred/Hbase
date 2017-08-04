@@ -1,18 +1,17 @@
 package com.hbase.dao.impl;
 
 import com.hbase.dao.BaseDao;
-import com.hbase.entity.jdbc.ColumnOps;
+import com.hbase.entity.jdbc.Compare;
 import com.hbase.entity.jdbc.Condition;
+import com.hbase.entity.jdbc.QueryCondition;
+import com.hbase.entity.jdbc.UpdateParams;
 import org.junit.Test;
 import org.junit.runner.RunWith;
-import org.slf4j.Logger;
-import org.slf4j.LoggerFactory;
 import org.springframework.test.context.ContextConfiguration;
 import org.springframework.test.context.junit4.SpringJUnit4ClassRunner;
 
 import javax.inject.Inject;
 import java.util.HashMap;
-import java.util.LinkedHashMap;
 import java.util.Map;
 
 @RunWith(SpringJUnit4ClassRunner.class)
@@ -23,8 +22,6 @@ public class BaseDaoJdbcTemplateImplTest {
     @Inject
     private BaseDao baseDao;
 
-    private static final Logger LOGGER = LoggerFactory.getLogger(BaseDaoJdbcTemplateImpl.class);
-
     @Test
     public void findById() throws Exception {
         System.out.println(baseDao.findById(X_MEMBER,606,"id,name,phone,token"));
@@ -32,22 +29,13 @@ public class BaseDaoJdbcTemplateImplTest {
 
     @Test
     public void findCount() throws Exception {
-        Map<ColumnOps,Object> condition = new LinkedHashMap<>();
-        condition.put(new ColumnOps("id", ColumnOps.CompareOp.EQUAL),606);
-        System.out.println(baseDao.findCount(X_MEMBER,condition));
-    }
-
-    @Test
-    public void findCount1() throws Exception {
-        System.out.println(baseDao.findCount(X_MEMBER,null,Condition.create().setIn("id IN(6,7,8,606,587)")));
+        System.out.println(baseDao.findCount(X_MEMBER,Condition.create().addCondition("id",606)));
     }
 
     @Test
     public void find() throws Exception {
-    }
-
-    @Test
-    public void findByEq() throws Exception {
+        System.out.println(baseDao.find(X_MEMBER,"id,name,phone,token", QueryCondition.create(1,20)
+        .setOrder("phone desc")));
     }
 
     @Test
@@ -59,9 +47,7 @@ public class BaseDaoJdbcTemplateImplTest {
 
     @Test
     public void delete() throws Exception {
-        Map<String,Object> map = new HashMap<>();
-        map.put("name","zhangsan");
-        System.out.println(baseDao.delete(X_MEMBER,map));
+        System.out.println(baseDao.delete(X_MEMBER,Condition.create().addCondition("id",57717, Compare.GREATER_OR_EQUAL)));
     }
 
     @Test
@@ -71,18 +57,16 @@ public class BaseDaoJdbcTemplateImplTest {
 
     @Test
     public void update() throws Exception {
-        Map<String,Object> map = new HashMap<>();
-        map.put("name","lishi");
-        Map<String,Object> condition = new HashMap<>();
-        condition.put("name","zhangsan");
-        System.out.println(baseDao.update(X_MEMBER,map,condition));
+        System.out.println(baseDao.update(X_MEMBER, UpdateParams.create()
+                .addData("name","wangwu")
+                .addCondition("name","zhangsan")));
     }
 
     @Test
     public void updateById() throws Exception {
         Map<String,Object> map = new HashMap<>();
         map.put("name","lishi66");
-        System.out.println(baseDao.updateById(X_MEMBER,map,57737));
+        System.out.println(baseDao.updateById(X_MEMBER,map,57739));
     }
 
 }

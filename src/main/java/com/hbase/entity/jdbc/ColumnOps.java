@@ -3,40 +3,27 @@ package com.hbase.entity.jdbc;
 public class ColumnOps {
 
     private String column;
-    private CompareOp compareOp = CompareOp.EQUAL;
+    private Compare compare = Compare.EQUAL;
 
     public ColumnOps() {
     }
 
-    public ColumnOps(String column, CompareOp compareOp) {
+    public ColumnOps(String column, Compare compare) {
         this.column = column;
-        this.compareOp = compareOp;
+        this.compare = compare;
     }
 
     public void setColumn(String column) {
         this.column = column;
     }
 
-    public void setCompareOp(CompareOp compareOp) {
-        this.compareOp = compareOp;
+    public void setCompare(Compare compare) {
+        this.compare = compare;
     }
 
     @Override
     public String toString() {
-        return column + compareOp.value;
+        return column + compare.value;
     }
 
-    public enum CompareOp {
-        LESS(" < ? "),
-        LESS_OR_EQUAL(" <= ? "),
-        EQUAL(" = ? "),
-        NOT_EQUAL(" <> ? "),
-        GREATER_OR_EQUAL(" >= ? "),
-        GREATER(" > ? "),
-        LIKE(" LIKE ? ");
-        String value;
-        CompareOp(String value) {
-            this.value = value;
-        }
-    }
 }
