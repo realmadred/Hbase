@@ -4,8 +4,6 @@ import com.hbase.entity.*;
 import org.apache.commons.collections.CollectionUtils;
 import org.apache.commons.collections.MapUtils;
 import org.apache.commons.lang.StringUtils;
-import org.apache.commons.logging.Log;
-import org.apache.commons.logging.LogFactory;
 import org.apache.hadoop.conf.Configuration;
 import org.apache.hadoop.hbase.*;
 import org.apache.hadoop.hbase.client.*;
@@ -15,6 +13,9 @@ import org.apache.hadoop.hbase.coprocessor.AggregateImplementation;
 import org.apache.hadoop.hbase.filter.FilterList;
 import org.apache.hadoop.hbase.filter.SingleColumnValueFilter;
 import org.apache.hadoop.hbase.util.Bytes;
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
+import org.springframework.core.io.support.PropertiesLoaderUtils;
 
 import java.io.IOException;
 import java.util.*;
@@ -26,7 +27,7 @@ import java.util.*;
  */
 public class HbaseQueryUtils {
 
-    private static final Log LOG = LogFactory.getLog(HbaseQueryUtils.class);
+    private static final Logger LOG = LoggerFactory.getLogger(HbaseQueryUtils.class);
     private static final Configuration CONFIGURATION;
     private static Connection connection;
     private static Admin admin;
@@ -34,14 +35,14 @@ public class HbaseQueryUtils {
     private static final int DEFAULT_SIZE;
 
     static {
-        DEFAULT_SIZE = 10;
         CONFIGURATION = HBaseConfiguration.create();
-        CONFIGURATION.set(HConstants.ZOOKEEPER_CLIENT_PORT, "2181");
-        CONFIGURATION.set(HConstants.ZOOKEEPER_QUORUM, "192.168.127.129,192.168.127.132,192.168.127.133");
-        CONFIGURATION.set(HConstants.MASTER_PORT, "16000");
-        CONFIGURATION.set(HConstants.HBASE_DIR, "hdfs://192.168.127.129:9000/hbase");
-        CONFIGURATION.set(HConstants.HBASE_CLIENT_OPERATION_TIMEOUT, "5000");
+        DEFAULT_SIZE = 10;
         try {
+            Properties properties = PropertiesLoaderUtils.loadAllProperties("hbase.properties");
+            CONFIGURATION.set(HConstants.ZOOKEEPER_CLIENT_PORT, properties.getProperty("hbase.zookeeper_client_port"));
+            CONFIGURATION.set(HConstants.ZOOKEEPER_QUORUM, properties.getProperty("hbase.zookeeper_quorum"));
+            CONFIGURATION.set(HConstants.MASTER_PORT, properties.getProperty("hbase.master_port"));
+            CONFIGURATION.set(HConstants.HBASE_DIR, properties.getProperty("hbase.hbase_dir"));
             connection = ConnectionFactory.createConnection(CONFIGURATION);
             admin = connection.getAdmin();
             aggregationClient = new AggregationClient(CONFIGURATION);
@@ -510,15 +511,16 @@ public class HbaseQueryUtils {
 
     /**
      * 分页的复合条件查询
+     *
      * @param tableName       表名
-     * @param startKey start
-     * @param endKey end
+     * @param startKey        start
+     * @param endKey          end
      * @param hbaseConditions 复合条件
      * @param size            每页显示的数量
      * @return
      */
     public static List<HBaseResult> scanByConditions(String tableName, String startKey, String endKey, int size,
-                                                             List<HbaseConditionEntity> hbaseConditions) throws IOException {
+                                                     List<HbaseConditionEntity> hbaseConditions) throws IOException {
         ResultScanner rs = null;
         Table table = null;
         TableName tName = TableName.valueOf(tableName);
@@ -554,6 +556,7 @@ public class HbaseQueryUtils {
 
     /**
      * 组装过滤条件
+     *
      * @param hbaseConditions 条件
      * @return
      */
@@ -662,11 +665,11 @@ public class HbaseQueryUtils {
      * @param obj 打印对象
      */
     private static void log(Object obj) {
-        LOG.info(obj);
+        LOG.info("info:{}"+obj);
     }
 
     public static void main(String[] args) throws IOException {
-        addTableCoprocessor("S54321");
+//        addTableCoprocessor("S54321");
         long l = rowCount("S54321", "info");
         System.out.println(l);
     }
