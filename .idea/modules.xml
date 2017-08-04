@@ -2,9 +2,9 @@
 <project version="4">
   <component name="ProjectModuleManager">
     <modules>
-      <module fileurl="file://$PROJECT_DIR$/.idea/modules/test.iml" filepath="$PROJECT_DIR$/.idea/modules/test.iml" />
-      <module fileurl="file://$PROJECT_DIR$/.idea/modules/test_main.iml" filepath="$PROJECT_DIR$/.idea/modules/test_main.iml" group="test" />
-      <module fileurl="file://$PROJECT_DIR$/.idea/modules/test_test.iml" filepath="$PROJECT_DIR$/.idea/modules/test_test.iml" group="test" />
+      <module fileurl="file://$PROJECT_DIR$/.idea/modules/hbase.iml" filepath="$PROJECT_DIR$/.idea/modules/hbase.iml" />
+      <module fileurl="file://$PROJECT_DIR$/.idea/modules/hbase_main.iml" filepath="$PROJECT_DIR$/.idea/modules/hbase_main.iml" group="hbase" />
+      <module fileurl="file://$PROJECT_DIR$/.idea/modules/hbase_test.iml" filepath="$PROJECT_DIR$/.idea/modules/hbase_test.iml" group="hbase" />
     </modules>
   </component>
 </project>
