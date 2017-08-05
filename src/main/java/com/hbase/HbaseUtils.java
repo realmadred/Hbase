@@ -436,18 +436,18 @@ public class HbaseUtils {
      * @param col       列名称
      * @throws IOException
      */
-    public static void getData(String tableName, String rowKey, String colFamily, String col) throws IOException {
-        Table table = connection.getTable(TableName.valueOf(tableName));
-        Get get = new Get(Bytes.toBytes(rowKey));
-        if (colFamily != null) {
-            get.addFamily(Bytes.toBytes(colFamily));
-            if (col != null) {
-                get.addColumn(Bytes.toBytes(colFamily), Bytes.toBytes(col));
+    public static HBaseResult getData(String tableName, String rowKey, String colFamily, String col) throws IOException {
+        try (Table table = connection.getTable(TableName.valueOf(tableName))){
+            Get get = new Get(Bytes.toBytes(rowKey));
+            if (colFamily != null) {
+                get.addFamily(Bytes.toBytes(colFamily));
+                if (col != null) {
+                    get.addColumn(Bytes.toBytes(colFamily), Bytes.toBytes(col));
+                }
             }
+            Result result = table.get(get);
+            return getResult(result);
         }
-        Result result = table.get(get);
-        showCell(result);
-        table.close();
     }
 
     /**
@@ -457,8 +457,8 @@ public class HbaseUtils {
      * @param rowKey
      * @throws IOException
      */
-    public static void getData(String tableName, String rowKey) throws IOException {
-        getData(tableName, rowKey, null, null);
+    public static HBaseResult getData(String tableName, String rowKey) throws IOException {
+       return getData(tableName, rowKey, null, null);
     }
 
     /**
@@ -669,8 +669,6 @@ public class HbaseUtils {
     }
 
     public static void main(String[] args) throws IOException {
-//        addTableCoprocessor("S54321");
-        long l = rowCount("S54321", "info");
-        System.out.println(l);
+        System.out.println(getData("car_run","豫AM53S52017-06-02 00:13:21.0"));
     }
 } 
