@@ -145,7 +145,8 @@ public class BaseDaoJdbcTemplateImpl implements BaseDao {
             }
             return ps;
         }, keyHolder);
-        return keyHolder.getKey().intValue();
+        final Number key = keyHolder.getKey();
+        return key == null ? 1 : key.intValue();
     }
 
     /**

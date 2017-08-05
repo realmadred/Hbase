@@ -41,7 +41,7 @@ public class BaseDaoJdbcTemplateImplTest {
     @Test
     public void add() throws Exception {
         Map<String,Object> map = new HashMap<>();
-        map.put("name","zhangsan");
+        map.put("name","lishi");
         map.put("age",20);
         System.out.println(baseDao.add("test", map));
     }

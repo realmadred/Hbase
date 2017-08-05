@@ -25,9 +25,9 @@ import java.util.*;
  * lf
  * 2017-08-02 16:13:49
  */
-public class HbaseQueryUtils {
+public class HbaseUtils {
 
-    private static final Logger LOG = LoggerFactory.getLogger(HbaseQueryUtils.class);
+    private static final Logger LOG = LoggerFactory.getLogger(HbaseUtils.class);
     private static final Configuration CONFIGURATION;
     private static Connection connection;
     private static Admin admin;
