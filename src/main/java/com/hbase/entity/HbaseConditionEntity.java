@@ -4,6 +4,7 @@ import org.apache.hadoop.hbase.filter.CompareFilter.CompareOp;
 import org.apache.hadoop.hbase.filter.FilterList.Operator;
 import org.apache.hadoop.hbase.util.Bytes;
 
+import javax.annotation.Nonnull;
 import java.io.Serializable;
 import java.io.UnsupportedEncodingException;
 import java.util.ArrayList;
@@ -32,15 +33,15 @@ public class HbaseConditionEntity implements Serializable{
     }
 
     public HbaseConditionEntity(String familyColumn, String column,
-                                String value, Operator operator, CompareOp compareOp) {
-        this(Bytes.toBytes(familyColumn),Bytes.toBytes(column),Bytes.toBytes(value),operator,compareOp);
+                                @Nonnull Object value, Operator operator, CompareOp compareOp) {
+        this(Bytes.toBytes(familyColumn),Bytes.toBytes(column),Bytes.toBytes(value.toString()),operator,compareOp);
     }
 
     public HbaseConditionEntity(String familyColumn, String column,
-                                String value) {
+                                @Nonnull Object value) {
         this.familyColumn = Bytes.toBytes(familyColumn);
         this.column = Bytes.toBytes(column);
-        this.value = Bytes.toBytes(value);
+        this.value = Bytes.toBytes(value.toString());
     }
 
     public HbaseConditionEntity() {

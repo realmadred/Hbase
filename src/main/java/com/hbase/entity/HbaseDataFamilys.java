@@ -10,14 +10,14 @@ public class HbaseDataFamilys implements Serializable{
 
 	private static final long serialVersionUID = 4451482729334530119L;
 	private String key;
-	private Map<String,Map<String,String>> columns;//map<columnfamily,map<column,value>>
+	private Map<String,Map<String,Object>> columns;//map<columnfamily,map<column,value>>
 	
 	public HbaseDataFamilys() {
 		super();
 	}
 	
 	public HbaseDataFamilys(String tableName, String nameSpace,
-							String key, Map<String, Map<String, String>> columns) {
+							String key, Map<String, Map<String, Object>> columns) {
 		super();
 		this.key = key;
 		this.columns = columns;
@@ -31,10 +31,10 @@ public class HbaseDataFamilys implements Serializable{
 		this.key = key;
 	}
 
-	public Map<String, Map<String, String>> getColumns() {
+	public Map<String, Map<String, Object>> getColumns() {
 		return columns;
 	}
-	public void setColumns(Map<String, Map<String, String>> columns) {
+	public void setColumns(Map<String, Map<String, Object>> columns) {
 		this.columns = columns;
 	}
 

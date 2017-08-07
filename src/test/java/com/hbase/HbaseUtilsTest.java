@@ -1,19 +1,24 @@
 package com.hbase;
 
-import com.google.common.base.Function;
-import com.google.common.collect.Maps;
 import com.hbase.dao.BaseDao;
+import com.hbase.entity.HBaseResult;
+import com.hbase.entity.HbaseConditionEntity;
 import com.hbase.entity.HbaseDataOneFamily;
 import com.hbase.entity.jdbc.QueryCondition;
+import org.apache.hadoop.hbase.filter.CompareFilter;
+import org.apache.hadoop.hbase.filter.FilterList;
 import org.junit.Test;
 import org.junit.runner.RunWith;
 import org.springframework.test.context.ContextConfiguration;
 import org.springframework.test.context.junit4.SpringJUnit4ClassRunner;
 import org.springframework.util.StopWatch;
 
-import javax.annotation.Nullable;
 import javax.inject.Inject;
-import java.util.*;
+import java.io.IOException;
+import java.util.ArrayList;
+import java.util.List;
+import java.util.Map;
+import java.util.Objects;
 
 @RunWith(SpringJUnit4ClassRunner.class)
 @ContextConfiguration(locations = {"classpath:spring.xml"})
@@ -33,21 +38,61 @@ public class HbaseUtilsTest {
             maps.forEach(map -> {
                 HbaseDataOneFamily family = new HbaseDataOneFamily();
                 family.setKey(Objects.toString(map.get("lpn")) + Objects.toString(map.get("create_time")));
-                family.setColumnMap(Maps.transformValues(map, new Function<Object, String>() {
-                    @Nullable
-                    @Override
-                    public String apply(@Nullable Object input) {
-                        return Objects.toString(input);
-                    }
-                }));
+                family.setColumnMap(map);
                 data.add(family);
             });
             // 使用单线程
-            HbaseUtils.insertList("car_run","info",data);
+            HbaseUtils.insertList("car_run", "info", data);
             data.clear();
             stopWatch.stop();
-            System.out.println(" 运行时间： "+stopWatch);
+            System.out.println(" 运行时间： " + stopWatch);
         }
+    }
+
+    @Test
+    public void insert() throws IOException {
+        final String table = "emp1";
+        final String cf = "cf1";
+        List<HbaseDataOneFamily> families = new ArrayList<>();
+        for (int i = 0; i < 15; i++) {
+            HbaseDataOneFamily family = new HbaseDataOneFamily().setKey("row" + i)
+                    .putData("name", i).putData("age", i);
+            families.add(family);
+        }
+        HbaseUtils.insertList(table, cf, families);
+    }
+
+    @Test
+    public void delete() throws IOException {
+        final String table = "emp1";
+        final String cf = "cf1";
+        for (int i = 0; i < 15; i++) {
+            HbaseUtils.delete(table, "row" + i, cf, "name");
+        }
+    }
+
+    @Test
+    public void scanTable() throws IOException {
+        final String table = "emp1";
+        List<HBaseResult> results = HbaseUtils.scanTable(table, "row1", "row11", 10);
+        System.out.println("--------------------------------------");
+        System.out.println(results.size());
+        System.out.println("--------------------------------------");
+        System.out.println(results);
+    }
+
+    @Test
+    public void scanTableByCondition() throws IOException {
+        final String table = "emp1";
+        List<HbaseConditionEntity> hbaseConditions = new ArrayList<>();
+        HbaseConditionEntity entity = new HbaseConditionEntity("cf1", "age", 15,
+                FilterList.Operator.MUST_PASS_ALL, CompareFilter.CompareOp.LESS);
+        hbaseConditions.add(entity);
+        List<HBaseResult> results = HbaseUtils.scanByConditions(table, "row1", "row11", 10, hbaseConditions);
+        System.out.println("--------------------------------------");
+        System.out.println(results.size());
+        System.out.println("--------------------------------------");
+        System.out.println(results);
     }
 
 }

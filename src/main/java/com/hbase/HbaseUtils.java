@@ -10,7 +10,9 @@ import org.apache.hadoop.hbase.client.*;
 import org.apache.hadoop.hbase.client.coprocessor.AggregationClient;
 import org.apache.hadoop.hbase.client.coprocessor.LongColumnInterpreter;
 import org.apache.hadoop.hbase.coprocessor.AggregateImplementation;
+import org.apache.hadoop.hbase.filter.Filter;
 import org.apache.hadoop.hbase.filter.FilterList;
+import org.apache.hadoop.hbase.filter.PageFilter;
 import org.apache.hadoop.hbase.filter.SingleColumnValueFilter;
 import org.apache.hadoop.hbase.util.Bytes;
 import org.slf4j.Logger;
@@ -81,6 +83,8 @@ public class HbaseUtils {
             }
         }
     }
+
+    /** -----------------------------------------DL----------------------------------------- */
 
     /**
      * 创建表
@@ -232,6 +236,9 @@ public class HbaseUtils {
         }
     }
 
+
+    /** -----------------------------------------DML----------------------------------------- */
+
     /**
      * 查看已有表
      *
@@ -280,22 +287,49 @@ public class HbaseUtils {
             Put put;
             for (HbaseDataFamilys entity : list) {
                 put = new Put(Bytes.toBytes(entity.getKey()));// 一个PUT代表一行数据，再NEW一个PUT表示第二行数据,每行一个唯一的ROWKEY
-                Set<Map.Entry<String, Map<String, String>>> entries = entity.getColumns().entrySet();
-                for (Map.Entry<String, Map<String, String>> columnFamilys : entries) {
+                Set<Map.Entry<String, Map<String, Object>>> entries = entity.getColumns().entrySet();
+                for (Map.Entry<String, Map<String, Object>> columnFamilys : entries) {
                     // 获取列数据
-                    Map<String, String> map = columnFamilys.getValue();
+                    Map<String, Object> map = columnFamilys.getValue();
                     // 列族
                     String cf = columnFamilys.getKey();
                     byte[] family = Bytes.toBytes(cf);
-                    for (Map.Entry<String, String> columns : map.entrySet()) {
-                        String column = columns.getKey();
-                        String value = columns.getValue();
-                        put.addColumn(family, Bytes.toBytes(column), Bytes.toBytes(value));
-                    }
+                    // 处理数据列
+                    putColumn(put, map, family);
                 }
                 puts.add(put);
             }
             table.put(puts);
+        }
+    }
+
+    /**
+     * 处理列数据
+     *
+     * @param put    put
+     * @param map    数据
+     * @param family 列族
+     */
+    private static void putColumn(Put put, Map<String, Object> map, byte[] family) {
+        for (Map.Entry<String, Object> columns : map.entrySet()) {
+            String column = columns.getKey();
+            Object value = columns.getValue();
+            if (value == null) continue;
+//            byte[] bytes = ByteUtil.EMPTY_BYTE_ARRAY;
+//            if (value instanceof String) {
+//                bytes = Bytes.toBytes(value.toString());
+//            } else if (value instanceof Short) {
+//                bytes = Bytes.toBytes((Short) value);
+//            } else if (value instanceof Integer) {
+//                bytes = Bytes.toBytes((Integer) value);
+//            } else if (value instanceof Long) {
+//                bytes = Bytes.toBytes((Long) value);
+//            } else if (value instanceof Float) {
+//                bytes = Bytes.toBytes((Float) value);
+//            } else if (value instanceof Double) {
+//                bytes = Bytes.toBytes((Double) value);
+//            }
+            put.addColumn(family, Bytes.toBytes(column), Bytes.toBytes(value.toString()));
         }
     }
 
@@ -315,13 +349,10 @@ public class HbaseUtils {
             byte[] family = Bytes.toBytes(columnFamily);
             for (HbaseDataOneFamily entity : list) {
                 put = new Put(Bytes.toBytes(entity.getKey()));
-                Map<String, String> columnMap = entity.getColumnMap();
+                Map<String, Object> columnMap = entity.getColumnMap();
                 if (MapUtils.isEmpty(columnMap)) continue;
-                for (Map.Entry<String, String> columns : columnMap.entrySet()) {
-                    String column = columns.getKey();
-                    String value = columns.getValue();
-                    put.addColumn(family, Bytes.toBytes(column), Bytes.toBytes(value));
-                }
+                // 处理数据列
+                putColumn(put, columnMap, family);
                 puts.add(put);
             }
             table.put(puts);
@@ -437,7 +468,7 @@ public class HbaseUtils {
      * @throws IOException
      */
     public static HBaseResult getData(String tableName, String rowKey, String colFamily, String col) throws IOException {
-        try (Table table = connection.getTable(TableName.valueOf(tableName))){
+        try (Table table = connection.getTable(TableName.valueOf(tableName))) {
             Get get = new Get(Bytes.toBytes(rowKey));
             if (colFamily != null) {
                 get.addFamily(Bytes.toBytes(colFamily));
@@ -458,7 +489,7 @@ public class HbaseUtils {
      * @throws IOException
      */
     public static HBaseResult getData(String tableName, String rowKey) throws IOException {
-       return getData(tableName, rowKey, null, null);
+        return getData(tableName, rowKey, null, null);
     }
 
     /**
@@ -477,6 +508,8 @@ public class HbaseUtils {
         if (StringUtils.isNotBlank(end)) {
             scan.setStopRow(Bytes.toBytes(end));
         }
+        Filter pageFilter = new PageFilter(size);
+        scan.setFilter(pageFilter);
         List<HBaseResult> results = new ArrayList<>();
         if (admin.tableExists(tName)) {
             Table table = connection.getTable(tName);
@@ -486,12 +519,8 @@ public class HbaseUtils {
                     results.add(getResult(result));
                 }
             } finally {
-                if (scanner != null) {
-                    scanner.close();
-                }
-                if (table != null) {
-                    table.close();
-                }
+                scanner.close();
+                table.close();
             }
         } else {
             log(tableName + " not exists.");
@@ -535,8 +564,10 @@ public class HbaseUtils {
             }
             scan.setMaxResultSize(size);
             scan.setReversed(true);
+            Filter pageFilter = new PageFilter(size);
             // 过滤条件列表
             FilterList filterList = getFilterList(hbaseConditions);
+            filterList.addFilter(pageFilter);
             scan.setFilter(filterList);
             rs = table.getScanner(scan);
             List<HBaseResult> results = new ArrayList<>();
@@ -665,10 +696,10 @@ public class HbaseUtils {
      * @param obj 打印对象
      */
     private static void log(Object obj) {
-        LOG.info("info:{}"+obj);
+        LOG.info("info:{}" + obj);
     }
 
     public static void main(String[] args) throws IOException {
-        System.out.println(getData("car_run","豫AM53S52017-06-02 00:13:21.0"));
+        System.out.println(getData("car_run", "豫AM53S52017-06-02 00:13:21.0"));
     }
 } 
