@@ -1,8 +1,10 @@
 package com.hbase;
 
 import com.hbase.entity.*;
+import com.hbase.exception.HBaseException;
 import org.apache.commons.collections.CollectionUtils;
 import org.apache.commons.collections.MapUtils;
+import org.apache.commons.lang.ArrayUtils;
 import org.apache.commons.lang.StringUtils;
 import org.apache.hadoop.conf.Configuration;
 import org.apache.hadoop.hbase.*;
@@ -93,19 +95,23 @@ public class HbaseUtils {
      * @param colFamilys 列族列表
      * @throws IOException
      */
-    public static void createTable(String tableName, String[] colFamilys) throws IOException {
-        TableName tName = TableName.valueOf(tableName);
-        if (admin.tableExists(tName)) {
-            log(tableName + " exists.");
-        } else {
-            HTableDescriptor hTableDesc = new HTableDescriptor(tName);
-            for (String col : colFamilys) {
-                HColumnDescriptor hColumnDesc = new HColumnDescriptor(col);
-                hColumnDesc.setBlockCacheEnabled(true);
-                hColumnDesc.setInMemory(true);
-                hTableDesc.addFamily(hColumnDesc);
+    public static void createTable(String tableName, String[] colFamilys) {
+        try {
+            TableName tName = TableName.valueOf(tableName);
+            if (admin.tableExists(tName)) {
+                log(tableName + " exists.");
+            } else {
+                HTableDescriptor hTableDesc = new HTableDescriptor(tName);
+                for (String col : colFamilys) {
+                    HColumnDescriptor hColumnDesc = new HColumnDescriptor(col);
+                    hColumnDesc.setBlockCacheEnabled(true);
+                    hColumnDesc.setInMemory(true);
+                    hTableDesc.addFamily(hColumnDesc);
+                }
+                admin.createTable(hTableDesc);
             }
-            admin.createTable(hTableDesc);
+        } catch (IOException e) {
+            throw new HBaseException("createTable error!",e);
         }
     }
 
@@ -116,7 +122,7 @@ public class HbaseUtils {
      * @param col       列族
      * @throws IOException
      */
-    public static void createTable(String tableName, String col) throws IOException {
+    public static void createTable(String tableName, String col)  {
         createTable(tableName, new String[]{col});
     }
 
@@ -126,9 +132,13 @@ public class HbaseUtils {
      * @param namespace namespace
      * @throws IOException
      */
-    public static void createNamespace(String namespace) throws IOException {
-        NamespaceDescriptor descriptor = NamespaceDescriptor.create(namespace).build();
-        admin.createNamespace(descriptor);
+    public static void createNamespace(String namespace) {
+        try {
+            NamespaceDescriptor descriptor = NamespaceDescriptor.create(namespace).build();
+            admin.createNamespace(descriptor);
+        } catch (IOException e) {
+            throw new HBaseException("createNamespace error!",e);
+        }
     }
 
     /**
@@ -137,13 +147,17 @@ public class HbaseUtils {
      * @param tableName 表名称
      * @throws IOException
      */
-    public static void deleteTable(String tableName) throws IOException {
-        TableName tName = TableName.valueOf(tableName);
-        if (admin.tableExists(tName)) {
-            admin.disableTable(tName);
-            admin.deleteTable(tName);
-        } else {
-            log(tableName + " not exists.");
+    public static void deleteTable(String tableName) {
+        try {
+            TableName tName = TableName.valueOf(tableName);
+            if (admin.tableExists(tName)) {
+                admin.disableTable(tName);
+                admin.deleteTable(tName);
+            } else {
+                log(tableName + " not exists.");
+            }
+        } catch (Exception e) {
+            throw new HBaseException("deleteTable error", e);
         }
     }
 
@@ -153,13 +167,17 @@ public class HbaseUtils {
      * @param tableName 表名称
      * @throws IOException
      */
-    public static void descTable(String tableName) throws IOException {
-        TableName tName = TableName.valueOf(tableName);
-        if (admin.tableExists(tName)) {
-            HTableDescriptor descriptor = new HTableDescriptor(tName);
-            log(descriptor.getColumnFamilies());
-        } else {
-            log(tableName + " not exists.");
+    public static void descTable(String tableName) {
+        try {
+            TableName tName = TableName.valueOf(tableName);
+            if (admin.tableExists(tName)) {
+                HTableDescriptor descriptor = new HTableDescriptor(tName);
+                log(descriptor.getColumnFamilies());
+            } else {
+                log(tableName + " not exists.");
+            }
+        } catch (IOException e) {
+            throw new HBaseException("descTable error!", e);
         }
     }
 
@@ -170,13 +188,17 @@ public class HbaseUtils {
      * @param cf        列族
      * @throws IOException
      */
-    public static void addColumn(String tableName, String cf) throws IOException {
-        TableName tName = TableName.valueOf(tableName);
-        if (admin.tableExists(tName)) {
-            HColumnDescriptor columnDescriptor = new HColumnDescriptor(cf);
-            admin.addColumn(tName, columnDescriptor);
-        } else {
-            log(tableName + " not exists.");
+    public static void addColumn(String tableName, String cf) {
+        try {
+            TableName tName = TableName.valueOf(tableName);
+            if (admin.tableExists(tName)) {
+                HColumnDescriptor columnDescriptor = new HColumnDescriptor(cf);
+                admin.addColumn(tName, columnDescriptor);
+            } else {
+                log(tableName + " not exists.");
+            }
+        } catch (IOException e) {
+            throw new HBaseException("addColumn error!", e);
         }
     }
 
@@ -187,16 +209,20 @@ public class HbaseUtils {
      * @param cfs       列族
      * @throws IOException
      */
-    public static void addColumns(String tableName, String[] cfs) throws IOException {
-        TableName tName = TableName.valueOf(tableName);
-        if (admin.tableExists(tName)) {
-            HColumnDescriptor columnDescriptor;
-            for (int i = 0; i < cfs.length; i++) {
-                columnDescriptor = new HColumnDescriptor(cfs[i]);
-                admin.addColumn(tName, columnDescriptor);
+    public static void addColumns(String tableName, String[] cfs) {
+        try {
+            TableName tName = TableName.valueOf(tableName);
+            if (admin.tableExists(tName)) {
+                HColumnDescriptor columnDescriptor;
+                for (int i = 0; i < cfs.length; i++) {
+                    columnDescriptor = new HColumnDescriptor(cfs[i]);
+                    admin.addColumn(tName, columnDescriptor);
+                }
+            } else {
+                log(tableName + " not exists.");
             }
-        } else {
-            log(tableName + " not exists.");
+        } catch (IOException e) {
+            throw new HBaseException("addColumns error!", e);
         }
     }
 
@@ -206,13 +232,17 @@ public class HbaseUtils {
      * @param tableName 表名称
      * @throws IOException
      */
-    public static void delColumn(String tableName, String cf) throws IOException {
-        TableName tName = TableName.valueOf(tableName);
-        if (admin.tableExists(tName)) {
-            HColumnDescriptor columnDescriptor = new HColumnDescriptor(cf);
-            admin.deleteColumn(tName, columnDescriptor.getName());
-        } else {
-            log(tableName + " not exists.");
+    public static void delColumn(String tableName, String cf) {
+        try {
+            TableName tName = TableName.valueOf(tableName);
+            if (admin.tableExists(tName)) {
+                HColumnDescriptor columnDescriptor = new HColumnDescriptor(cf);
+                admin.deleteColumn(tName, columnDescriptor.getName());
+            } else {
+                log(tableName + " not exists.");
+            }
+        } catch (IOException e) {
+            throw new HBaseException("delColumn error!", e);
         }
     }
 
@@ -223,16 +253,20 @@ public class HbaseUtils {
      * @param cfs       列族
      * @throws IOException
      */
-    public static void delColumns(String tableName, String[] cfs) throws IOException {
-        TableName tName = TableName.valueOf(tableName);
-        if (admin.tableExists(tName)) {
-            HColumnDescriptor columnDescriptor;
-            for (int i = 0; i < cfs.length; i++) {
-                columnDescriptor = new HColumnDescriptor(cfs[i]);
-                admin.deleteColumn(tName, columnDescriptor.getName());
+    public static void delColumns(String tableName, String[] cfs) {
+        try {
+            TableName tName = TableName.valueOf(tableName);
+            if (admin.tableExists(tName)) {
+                HColumnDescriptor columnDescriptor;
+                for (int i = 0; i < cfs.length; i++) {
+                    columnDescriptor = new HColumnDescriptor(cfs[i]);
+                    admin.deleteColumn(tName, columnDescriptor.getName());
+                }
+            } else {
+                log(tableName + " not exists.");
             }
-        } else {
-            log(tableName + " not exists.");
+        } catch (IOException e) {
+            throw new HBaseException("delColumns error!", e);
         }
     }
 
@@ -244,16 +278,19 @@ public class HbaseUtils {
      *
      * @throws IOException
      */
-    public static void listTables() {
+    public static List<String> listTables() {
         HTableDescriptor hTableDescriptors[] = null;
         try {
             hTableDescriptors = admin.listTables();
         } catch (IOException e) {
             LOG.error("hbase error!", e);
         }
+        List<String> list = new ArrayList<>();
+        if (ArrayUtils.isEmpty(hTableDescriptors)) return list;
         for (HTableDescriptor hTableDescriptor : hTableDescriptors) {
-            log(hTableDescriptor.getNameAsString());
+            list.add(hTableDescriptor.getNameAsString());
         }
+        return list;
     }
 
     /**
@@ -266,11 +303,13 @@ public class HbaseUtils {
      * @param value     值
      * @throws IOException
      */
-    public static void insert(String tableName, String rowKey, String colFamily, String col, String value) throws IOException {
+    public static void insert(String tableName, String rowKey, String colFamily, String col, String value) {
         try (Table table = connection.getTable(TableName.valueOf(tableName))) {
             Put put = new Put(Bytes.toBytes(rowKey));
             put.addColumn(Bytes.toBytes(colFamily), Bytes.toBytes(col), Bytes.toBytes(value));
             table.put(put);
+        } catch (IOException e) {
+            throw new HBaseException("insert error!", e);
         }
     }
 
@@ -279,7 +318,7 @@ public class HbaseUtils {
      *
      * @param list 数据集合
      */
-    public static void insertDataList(String tableNameStr, List<HbaseDataFamilys> list) throws IOException {
+    public static void insertDataList(String tableNameStr, List<HbaseDataFamilys> list) {
         if (CollectionUtils.isEmpty(list)) return;
         List<Put> puts = new ArrayList<>(list.size());
         TableName tableName = TableName.valueOf(tableNameStr);
@@ -300,6 +339,8 @@ public class HbaseUtils {
                 puts.add(put);
             }
             table.put(puts);
+        } catch (Exception e) {
+            throw new HBaseException("insert error!", e);
         }
     }
 
@@ -339,23 +380,27 @@ public class HbaseUtils {
      *
      * @param list 数据集合
      */
-    public static void insertList(String tableNameStr, String columnFamily, List<HbaseDataOneFamily> list) throws IOException {
-        if (CollectionUtils.isEmpty(list) || StringUtils.isBlank(tableNameStr)
-                || StringUtils.isBlank(columnFamily)) return;
-        List<Put> puts = new ArrayList<>(list.size());
-        TableName tableName = TableName.valueOf(tableNameStr);
-        try (Table table = connection.getTable(tableName)) {
-            Put put;
-            byte[] family = Bytes.toBytes(columnFamily);
-            for (HbaseDataOneFamily entity : list) {
-                put = new Put(Bytes.toBytes(entity.getKey()));
-                Map<String, Object> columnMap = entity.getColumnMap();
-                if (MapUtils.isEmpty(columnMap)) continue;
-                // 处理数据列
-                putColumn(put, columnMap, family);
-                puts.add(put);
+    public static void insertList(String tableNameStr, String columnFamily, List<HbaseDataOneFamily> list) {
+        try {
+            if (CollectionUtils.isEmpty(list) || StringUtils.isBlank(tableNameStr)
+                    || StringUtils.isBlank(columnFamily)) return;
+            List<Put> puts = new ArrayList<>(list.size());
+            TableName tableName = TableName.valueOf(tableNameStr);
+            try (Table table = connection.getTable(tableName)) {
+                Put put;
+                byte[] family = Bytes.toBytes(columnFamily);
+                for (HbaseDataOneFamily entity : list) {
+                    put = new Put(Bytes.toBytes(entity.getKey()));
+                    Map<String, Object> columnMap = entity.getColumnMap();
+                    if (MapUtils.isEmpty(columnMap)) continue;
+                    // 处理数据列
+                    putColumn(put, columnMap, family);
+                    puts.add(put);
+                }
+                table.put(puts);
             }
-            table.put(puts);
+        } catch (IOException e) {
+            throw new HBaseException("insertList error!", e);
         }
     }
 
@@ -364,7 +409,7 @@ public class HbaseUtils {
      *
      * @param values 数据集合
      */
-    public static void insertMap(String tableNameStr, String columnFamily, Map<String, String> values) throws IOException {
+    public static void insertMap(String tableNameStr, String columnFamily, Map<String, String> values) {
         insertMap(tableNameStr, columnFamily, Long.toString(System.currentTimeMillis()), values);
     }
 
@@ -373,7 +418,7 @@ public class HbaseUtils {
      *
      * @param values 数据集合
      */
-    public static void insertMap(String tableNameStr, String columnFamily, String rowKey, Map<String, String> values) throws IOException {
+    public static void insertMap(String tableNameStr, String columnFamily, String rowKey, Map<String, String> values) {
         if (MapUtils.isEmpty(values) || StringUtils.isBlank(tableNameStr)
                 || StringUtils.isBlank(columnFamily)) return;
         TableName tableName = TableName.valueOf(tableNameStr);
@@ -386,6 +431,8 @@ public class HbaseUtils {
                 put.addColumn(family, Bytes.toBytes(column), Bytes.toBytes(value));
             }
             table.put(put);
+        } catch (IOException e) {
+            throw new HBaseException("insertMap error!", e);
         }
     }
 
@@ -398,23 +445,27 @@ public class HbaseUtils {
      * @param col       列
      * @throws IOException
      */
-    public static void delete(String tableName, String rowKey, String colFamily, String col) throws IOException {
-        if (!admin.tableExists(TableName.valueOf(tableName))) {
-            log(tableName + " not exists.");
-        } else {
-            Table table = connection.getTable(TableName.valueOf(tableName));
-            Delete del = new Delete(Bytes.toBytes(rowKey));
-            if (colFamily != null) {
-                del.addFamily(Bytes.toBytes(colFamily));
+    public static void delete(String tableName, String rowKey, String colFamily, String col) {
+        try {
+            if (!admin.tableExists(TableName.valueOf(tableName))) {
+                log(tableName + " not exists.");
+            } else {
+                Table table = connection.getTable(TableName.valueOf(tableName));
+                Delete del = new Delete(Bytes.toBytes(rowKey));
+                if (colFamily != null) {
+                    del.addFamily(Bytes.toBytes(colFamily));
+                }
+                if (colFamily != null && col != null) {
+                    del.addColumn(Bytes.toBytes(colFamily), Bytes.toBytes(col));
+                }
+                /*
+                 * 批量删除 List<Delete> deleteList = new ArrayList<Delete>(); deleteList.add(delete); table.delete(deleteList);
+                 */
+                table.delete(del);
+                table.close();
             }
-            if (colFamily != null && col != null) {
-                del.addColumn(Bytes.toBytes(colFamily), Bytes.toBytes(col));
-            }  
-            /* 
-             * 批量删除 List<Delete> deleteList = new ArrayList<Delete>(); deleteList.add(delete); table.delete(deleteList); 
-             */
-            table.delete(del);
-            table.close();
+        } catch (IOException e) {
+            throw new HBaseException("delete error!", e);
         }
     }
 
@@ -426,35 +477,39 @@ public class HbaseUtils {
      * @param list         列
      * @throws IOException
      */
-    public static void deleteList(String tableName, String columnFamily, List<HbaseDeleteEntity> list) throws IOException {
-        if (!admin.tableExists(TableName.valueOf(tableName))) {
-            log(tableName + " not exists.");
-        } else {
-            if (CollectionUtils.isEmpty(list)) return;
-            Table table = connection.getTable(TableName.valueOf(tableName));
-            int size = list.size();
-            List<Delete> deleteList = new ArrayList<>(size);
-            for (int i = 0; i < size; i++) {
-                HbaseDeleteEntity deleteFamily = list.get(i);
-                if (deleteFamily == null) continue;
-                String key = deleteFamily.getKey();
-                Delete del = new Delete(Bytes.toBytes(key));
-                Set<String> columns = deleteFamily.getColumns();
-                if (columnFamily != null) {
-                    del.addFamily(Bytes.toBytes(columnFamily));
-                    if (CollectionUtils.isNotEmpty(columns)) {
-                        Iterator<String> iterator = columns.iterator();
-                        String col;
-                        while (iterator.hasNext()) {
-                            col = iterator.next();
-                            del.addColumn(Bytes.toBytes(columnFamily), Bytes.toBytes(col));
+    public static void deleteList(String tableName, String columnFamily, List<HbaseDeleteEntity> list) {
+        try {
+            if (!admin.tableExists(TableName.valueOf(tableName))) {
+                log(tableName + " not exists.");
+            } else {
+                if (CollectionUtils.isEmpty(list)) return;
+                Table table = connection.getTable(TableName.valueOf(tableName));
+                int size = list.size();
+                List<Delete> deleteList = new ArrayList<>(size);
+                for (int i = 0; i < size; i++) {
+                    HbaseDeleteEntity deleteFamily = list.get(i);
+                    if (deleteFamily == null) continue;
+                    String key = deleteFamily.getKey();
+                    Delete del = new Delete(Bytes.toBytes(key));
+                    Set<String> columns = deleteFamily.getColumns();
+                    if (columnFamily != null) {
+                        del.addFamily(Bytes.toBytes(columnFamily));
+                        if (CollectionUtils.isNotEmpty(columns)) {
+                            Iterator<String> iterator = columns.iterator();
+                            String col;
+                            while (iterator.hasNext()) {
+                                col = iterator.next();
+                                del.addColumn(Bytes.toBytes(columnFamily), Bytes.toBytes(col));
+                            }
                         }
                     }
+                    deleteList.add(del);
                 }
-                deleteList.add(del);
+                table.delete(deleteList);
+                table.close();
             }
-            table.delete(deleteList);
-            table.close();
+        } catch (IOException e) {
+            throw new HBaseException("deleteList error!", e);
         }
     }
 
@@ -467,7 +522,7 @@ public class HbaseUtils {
      * @param col       列名称
      * @throws IOException
      */
-    public static HBaseResult getData(String tableName, String rowKey, String colFamily, String col) throws IOException {
+    public static HBaseResult getData(String tableName, String rowKey, String colFamily, String col) {
         try (Table table = connection.getTable(TableName.valueOf(tableName))) {
             Get get = new Get(Bytes.toBytes(rowKey));
             if (colFamily != null) {
@@ -478,6 +533,8 @@ public class HbaseUtils {
             }
             Result result = table.get(get);
             return getResult(result);
+        } catch (Exception e) {
+            throw new HBaseException("getData error!", e);
         }
     }
 
@@ -498,34 +555,38 @@ public class HbaseUtils {
      * @param tableName
      * @throws IOException
      */
-    public static List<HBaseResult> scanTable(String tableName, String start, String end, int size) throws IOException {
-        TableName tName = TableName.valueOf(tableName);
-        Scan scan = new Scan();
-        scan.setMaxResultSize(size);
-        if (StringUtils.isNotBlank(start)) {
-            scan.setStartRow(Bytes.toBytes(start));
-        }
-        if (StringUtils.isNotBlank(end)) {
-            scan.setStopRow(Bytes.toBytes(end));
-        }
-        Filter pageFilter = new PageFilter(size);
-        scan.setFilter(pageFilter);
-        List<HBaseResult> results = new ArrayList<>();
-        if (admin.tableExists(tName)) {
-            Table table = connection.getTable(tName);
-            ResultScanner scanner = table.getScanner(scan);
-            try {
-                for (Result result : scanner) {
-                    results.add(getResult(result));
-                }
-            } finally {
-                scanner.close();
-                table.close();
+    public static List<HBaseResult> scanTable(String tableName, String start, String end, int size) {
+        try {
+            TableName tName = TableName.valueOf(tableName);
+            Scan scan = new Scan();
+            scan.setMaxResultSize(size);
+            if (StringUtils.isNotBlank(start)) {
+                scan.setStartRow(Bytes.toBytes(start));
             }
-        } else {
-            log(tableName + " not exists.");
+            if (StringUtils.isNotBlank(end)) {
+                scan.setStopRow(Bytes.toBytes(end));
+            }
+            Filter pageFilter = new PageFilter(size);
+            scan.setFilter(pageFilter);
+            List<HBaseResult> results = new ArrayList<>();
+            if (admin.tableExists(tName)) {
+                Table table = connection.getTable(tName);
+                ResultScanner scanner = table.getScanner(scan);
+                try {
+                    for (Result result : scanner) {
+                        results.add(getResult(result));
+                    }
+                } finally {
+                    scanner.close();
+                    table.close();
+                }
+            } else {
+                log(tableName + " not exists.");
+            }
+            return results;
+        } catch (IOException e) {
+            throw new HBaseException("scanTable error!", e);
         }
-        return results;
     }
 
     /**
@@ -534,7 +595,7 @@ public class HbaseUtils {
      * @param tableName
      * @throws IOException
      */
-    public static List<HBaseResult> scanTable(String tableName) throws IOException {
+    public static List<HBaseResult> scanTable(String tableName) {
         return scanTable(tableName, "", "", DEFAULT_SIZE);
     }
 
@@ -549,7 +610,7 @@ public class HbaseUtils {
      * @return
      */
     public static List<HBaseResult> scanByConditions(String tableName, String startKey, String endKey, int size,
-                                                     List<HbaseConditionEntity> hbaseConditions) throws IOException {
+                                                     List<HbaseConditionEntity> hbaseConditions) {
         ResultScanner rs = null;
         Table table = null;
         TableName tName = TableName.valueOf(tableName);
@@ -575,12 +636,18 @@ public class HbaseUtils {
                 results.add(getResult(r));
             }
             return results;
+        } catch (Exception e) {
+            throw new HBaseException("scanTable error!", e);
         } finally {
             if (rs != null) {
                 rs.close();
             }
             if (table != null) {
-                table.close();
+                try {
+                    table.close();
+                } catch (IOException e) {
+                    LOG.error("close table error!");
+                }
             }
         }
     }

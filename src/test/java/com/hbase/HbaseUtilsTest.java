@@ -4,7 +4,10 @@ import com.hbase.dao.BaseDao;
 import com.hbase.entity.HBaseResult;
 import com.hbase.entity.HbaseConditionEntity;
 import com.hbase.entity.HbaseDataOneFamily;
+import com.hbase.entity.jdbc.Compare;
 import com.hbase.entity.jdbc.QueryCondition;
+import org.apache.commons.collections.MapUtils;
+import org.apache.commons.lang.StringUtils;
 import org.apache.hadoop.hbase.filter.CompareFilter;
 import org.apache.hadoop.hbase.filter.FilterList;
 import org.junit.Test;
@@ -93,6 +96,32 @@ public class HbaseUtilsTest {
         System.out.println(results.size());
         System.out.println("--------------------------------------");
         System.out.println(results);
+    }
+
+    @Test
+    public void createTalble() {
+        int i = 0;
+        final int SIZE = 50;
+        while (true) {
+            List<Map<String, Object>> list = baseDao.find("x_car_run", "lpn", QueryCondition.create(i++, SIZE)
+                    .addCondition("id",210, Compare.GREATER));
+            if (list.isEmpty()) break;
+            list.forEach(map -> {
+                String lpn = MapUtils.getString(map, "lpn");
+                if (StringUtils.isNotBlank(lpn)) {
+                    HbaseUtils.createTable(lpn.substring(1), "info");
+                }
+            });
+            System.out.println(list.size());
+            if (list.size() < SIZE) break;
+        }
+    }
+
+    @Test
+    public void deleteTable() throws IOException {
+        List<String> tables = HbaseUtils.listTables();
+        System.out.println(tables);
+        tables.forEach(HbaseUtils::deleteTable);
     }
 
 }

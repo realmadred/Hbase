@@ -2,11 +2,22 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="936fb7c7-38a4-4062-b7c1-33759dd91375" name="Default" comment="">
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/main/java/com/hbase/exception/HBaseException.java" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/main/java/com/hbase/utils/Lpn.java" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/test/java/com/hbase/HbaseTest.java" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/test/java/com/hbase/JsonTest.java" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/out/production/classes/com/hbase/HbaseDemo.class" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/out/production/classes/com/hbase/HbaseQueryUtils.class" afterPath="" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/production/classes/com/hbase/entity/HbaseConditionEntity.class" afterPath="$PROJECT_DIR$/out/production/classes/com/hbase/entity/HbaseConditionEntity.class" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/production/classes/com/hbase/entity/HbaseDataFamilys.class" afterPath="$PROJECT_DIR$/out/production/classes/com/hbase/entity/HbaseDataFamilys.class" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/production/classes/com/hbase/entity/HbaseDataOneFamily.class" afterPath="$PROJECT_DIR$/out/production/classes/com/hbase/entity/HbaseDataOneFamily.class" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/.name" afterPath="$PROJECT_DIR$/.idea/.name" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/modules/hbase_main.iml" afterPath="$PROJECT_DIR$/.idea/modules/hbase_main.iml" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/modules/hbase_test.iml" afterPath="$PROJECT_DIR$/.idea/modules/hbase_test.iml" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/build.gradle" afterPath="$PROJECT_DIR$/build.gradle" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/com/hbase/HbaseUtils.java" afterPath="$PROJECT_DIR$/src/main/java/com/hbase/HbaseUtils.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/com/hbase/entity/HbaseConditionEntity.java" afterPath="$PROJECT_DIR$/src/main/java/com/hbase/entity/HbaseConditionEntity.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/com/hbase/entity/HbaseDataFamilys.java" afterPath="$PROJECT_DIR$/src/main/java/com/hbase/entity/HbaseDataFamilys.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/com/hbase/entity/HbaseDataOneFamily.java" afterPath="$PROJECT_DIR$/src/main/java/com/hbase/entity/HbaseDataOneFamily.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/com/hbase/entity/jdbc/PageCondition.java" afterPath="$PROJECT_DIR$/src/main/java/com/hbase/entity/jdbc/PageCondition.java" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/test/java/com/hbase/HbaseUtilsTest.java" afterPath="$PROJECT_DIR$/src/test/java/com/hbase/HbaseUtilsTest.java" />
     </list>
     <ignored path="$PROJECT_DIR$/out/" />
@@ -38,6 +49,10 @@
     </expand>
     <select />
   </component>
+  <component name="DsmViewSettings">
+    <option name="groupByModuleGroups" value="false" />
+    <option name="useGradient" value="false" />
+  </component>
   <component name="ExternalProjectsData">
     <projectState path="$PROJECT_DIR$">
       <ProjectState />
@@ -46,17 +61,25 @@
   <component name="ExternalProjectsManager">
     <system id="GRADLE">
       <state>
+        <task path="$PROJECT_DIR$">
+          <activation />
+        </task>
         <projects_view>
           <tree_state>
             <expand>
               <path>
                 <item name="" type="6a2764b6:ExternalProjectsStructure$RootNode" />
-                <item name="test" type="f1a62948:ProjectNode" />
+                <item name="hbase" type="f1a62948:ProjectNode" />
               </path>
               <path>
                 <item name="" type="6a2764b6:ExternalProjectsStructure$RootNode" />
-                <item name="test" type="f1a62948:ProjectNode" />
+                <item name="hbase" type="f1a62948:ProjectNode" />
                 <item name="Source Sets" type="e897c970:GradleViewContributor$SourceSetsNode" />
+              </path>
+              <path>
+                <item name="" type="6a2764b6:ExternalProjectsStructure$RootNode" />
+                <item name="hbase" type="f1a62948:ProjectNode" />
+                <item name="Tasks" type="e4a08cd1:TasksNode" />
               </path>
             </expand>
             <select />
@@ -67,53 +90,12 @@
   </component>
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="375">
-      <file leaf-file-name="BaseDaoJdbcTemplateImpl.java" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/main/java/com/hbase/dao/impl/BaseDaoJdbcTemplateImpl.java">
+      <file leaf-file-name="BaseDaoJdbcTemplateImplTest.java" pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/src/test/java/com/hbase/dao/impl/BaseDaoJdbcTemplateImplTest.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="27">
-              <caret line="50" column="71" lean-forward="true" selection-start-line="50" selection-start-column="71" selection-end-line="50" selection-end-column="71" />
-              <folding>
-                <element signature="docComment;class#BaseDaoJdbcTemplateImpl#0" expanded="false" />
-                <element signature="docComment;method#findById#0;class#BaseDaoJdbcTemplateImpl#0" expanded="false" />
-                <element signature="method#findById#0;class#BaseDaoJdbcTemplateImpl#0" expanded="false" />
-                <element signature="docComment;method#findCount#0;class#BaseDaoJdbcTemplateImpl#0" expanded="false" />
-                <element signature="method#findCount#0;class#BaseDaoJdbcTemplateImpl#0" expanded="false" />
-                <element signature="docComment;method#find#0;class#BaseDaoJdbcTemplateImpl#0" expanded="false" />
-                <element signature="method#find#0;class#BaseDaoJdbcTemplateImpl#0" expanded="false" />
-                <element signature="docComment;method#add#0;class#BaseDaoJdbcTemplateImpl#0" expanded="false" />
-                <element signature="method#add#0;class#BaseDaoJdbcTemplateImpl#0" expanded="false" />
-                <element signature="docComment;method#delete#0;class#BaseDaoJdbcTemplateImpl#0" expanded="false" />
-                <element signature="method#delete#0;class#BaseDaoJdbcTemplateImpl#0" expanded="false" />
-                <element signature="docComment;method#deleteById#0;class#BaseDaoJdbcTemplateImpl#0" expanded="false" />
-                <element signature="method#deleteById#0;class#BaseDaoJdbcTemplateImpl#0" expanded="false" />
-                <element signature="docComment;method#update#0;class#BaseDaoJdbcTemplateImpl#0" expanded="false" />
-                <element signature="method#update#0;class#BaseDaoJdbcTemplateImpl#0" expanded="false" />
-                <element signature="docComment;method#updateById#0;class#BaseDaoJdbcTemplateImpl#0" expanded="false" />
-                <element signature="method#updateById#0;class#BaseDaoJdbcTemplateImpl#0" expanded="false" />
-                <element signature="docComment;method#handleArgs#0;class#BaseDaoJdbcTemplateImpl#0" expanded="false" />
-                <element signature="method#handleArgs#0;class#BaseDaoJdbcTemplateImpl#0" expanded="false" />
-                <element signature="e#8686#8783#0" expanded="false" />
-                <element signature="docComment;method#handleCondition#0;class#BaseDaoJdbcTemplateImpl#0" expanded="false" />
-                <element signature="method#handleCondition#0;class#BaseDaoJdbcTemplateImpl#0" expanded="false" />
-                <element signature="e#9428#10071#0" expanded="false" />
-                <element signature="e#10187#10583#0" expanded="false" />
-                <element signature="docComment;method#checkSql#0;class#BaseDaoJdbcTemplateImpl#0" expanded="false" />
-                <element signature="method#checkSql#0;class#BaseDaoJdbcTemplateImpl#0" expanded="false" />
-                <element signature="class#KeyWord#0;class#BaseDaoJdbcTemplateImpl#0" expanded="false" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="HbaseUtilsTest.java" pinned="false" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/src/test/java/com/hbase/HbaseUtilsTest.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="528">
-              <caret line="92" column="43" lean-forward="true" selection-start-line="92" selection-start-column="43" selection-end-line="92" selection-end-column="43" />
-              <folding>
-                <element signature="imports" expanded="true" />
-                <element signature="method#insertList#0;class#HbaseUtilsTest#0" expanded="false" />
-              </folding>
+            <state relative-caret-position="270">
+              <caret line="22" column="28" lean-forward="false" selection-start-line="22" selection-start-column="28" selection-end-line="22" selection-end-column="28" />
+              <folding />
             </state>
           </provider>
         </entry>
@@ -125,29 +107,43 @@
       <list>
         <option value="FxmlFile" />
         <option value="spring-beans.schema" />
-        <option value="Class" />
         <option value="JUnit4 Test Class" />
+        <option value="Class" />
       </list>
     </option>
   </component>
   <component name="FindInProjectRecents">
     <findStrings>
-      <find>tableName</find>
-      <find>@param tableName</find>
-      <find>e.printStackTrace()</find>
-      <find>mobileKey</find>
-      <find>Familys</find>
-      <find>HbaseDataEntity</find>
-      <find>Rea</find>
-      <find>ReadType</find>
-      <find>small</find>
-      <find>sql:</find>
-      <find>/n</find>
-      <find>WHERE</find>
-      <find>LOGGER.info(&quot;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;sql:{}\n args:{}&quot;, sql, args);</find>
-      <find>sql.toString()</find>
-      <find>create</find>
-      <find>HbaseDataOneFamily</find>
+      <find>桂</find>
+      <find>吉</find>
+      <find>晋</find>
+      <find>苏</find>
+      <find>藏</find>
+      <find>黑</find>
+      <find>云</find>
+      <find>青</find>
+      <find>陕</find>
+      <find>皖</find>
+      <find>湘</find>
+      <find>甘</find>
+      <find>浙</find>
+      <find>蒙</find>
+      <find>川</find>
+      <find>赣</find>
+      <find>粤</find>
+      <find>津</find>
+      <find>沪</find>
+      <find>豫</find>
+      <find>京</find>
+      <find>新</find>
+      <find>贵</find>
+      <find>辽</find>
+      <find>澳</find>
+      <find>黔</find>
+      <find>闽</find>
+      <find>海南</find>
+      <find>琼</find>
+      <find>LPN_MAP</find>
     </findStrings>
     <replaceStrings>
       <replace>name</replace>
@@ -160,6 +156,8 @@
       <replace>\n</replace>
       <replace>LOGGER.info(&quot;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;args:{}&quot;, args);</replace>
       <replace>checkSql(sql)</replace>
+      <replace>.equals(</replace>
+      <replace>CODE_PROV</replace>
     </replaceStrings>
   </component>
   <component name="Git.Settings">
@@ -343,7 +341,8 @@
     </option>
     <option name="modificationStamps">
       <map>
-        <entry key="$PROJECT_DIR$/build.gradle" value="1501342781" />
+        <entry key="$PROJECT_DIR$" value="3003900762422" />
+        <entry key="$PROJECT_DIR$/build.gradle" value="1106283011" />
         <entry key="$PROJECT_DIR$/settings.gradle" value="839651787" />
       </map>
     </option>
@@ -517,10 +516,6 @@
   <component name="IdeDocumentHistory">
     <option name="CHANGED_PATHS">
       <list>
-        <option value="$PROJECT_DIR$/src/main/resources/log4j2.fxml" />
-        <option value="$PROJECT_DIR$/src/main/resources/log4j2.xml" />
-        <option value="$PROJECT_DIR$/src/main/resources/log4j.properties" />
-        <option value="$PROJECT_DIR$/src/main/resources/commons-logging.properties" />
         <option value="$PROJECT_DIR$/src/main/java/com/hbase/HbaseConditionEntity.java" />
         <option value="$PROJECT_DIR$/src/main/java/com/hbase/HbaseDataEntity.java" />
         <option value="$PROJECT_DIR$/src/main/java/com/hbase/HbaseDataFamilys.java" />
@@ -532,7 +527,6 @@
         <option value="$PROJECT_DIR$/src/main/java/com/hbase/entity/HbaseDeleteEntity.java" />
         <option value="$USER_HOME$/.gradle/caches/modules-2/files-2.1/commons-lang/commons-lang/2.6/67313d715fbf0ea4fd0bdb69217fb77f807a8ce5/commons-lang-2.6-sources.jar!/org/apache/commons/lang/ObjectUtils.java" />
         <option value="$PROJECT_DIR$/src/main/java/com/hbase/Query.java" />
-        <option value="$PROJECT_DIR$/build.gradle" />
         <option value="$PROJECT_DIR$/src/main/resources/jdbc.properties" />
         <option value="$PROJECT_DIR$/src/main/resources/hbase.properties" />
         <option value="$PROJECT_DIR$/src/main/java/com/hbase/entity/jdbc/Page.java" />
@@ -553,19 +547,26 @@
         <option value="$PROJECT_DIR$/src/main/java/com/hbase/entity/jdbc/BaseCondition.java" />
         <option value="$PROJECT_DIR$/src/main/java/com/hbase/entity/jdbc/QueryCondition.java" />
         <option value="$PROJECT_DIR$/src/main/java/com/hbase/dao/BaseDao.java" />
-        <option value="$PROJECT_DIR$/.gitignore" />
         <option value="$PROJECT_DIR$/src/main/java/com/hbase/dao/impl/BaseDaoJdbcTemplateImpl.java" />
         <option value="$PROJECT_DIR$/src/test/java/com/hbase/dao/impl/BaseDaoJdbcTemplateImplTest.java" />
         <option value="$PROJECT_DIR$/src/test/java/com/hbase/JdbcTest.java" />
         <option value="$PROJECT_DIR$/src/test/java/com/hbase/WatchServerTest.java" />
-        <option value="$PROJECT_DIR$/src/main/java/com/hbase/entity/jdbc/PageCondition.java" />
         <option value="$PROJECT_DIR$/src/main/resources/spring.xml" />
         <option value="$APPLICATION_CONFIG_DIR$/consoles/db/6c6d890b-db27-420b-af07-c7a5258f44ca/console.sql" />
         <option value="$PROJECT_DIR$/src/main/java/com/hbase/entity/HbaseDataFamilys.java" />
         <option value="$PROJECT_DIR$/src/main/java/com/hbase/entity/HbaseDataOneFamily.java" />
         <option value="$PROJECT_DIR$/src/main/java/com/hbase/entity/HbaseConditionEntity.java" />
-        <option value="$PROJECT_DIR$/src/test/java/com/hbase/HbaseUtilsTest.java" />
+        <option value="$PROJECT_DIR$/.gitignore" />
+        <option value="$USER_HOME$/.gradle/caches/modules-2/files-2.1/commons-lang/commons-lang/2.6/67313d715fbf0ea4fd0bdb69217fb77f807a8ce5/commons-lang-2.6-sources.jar!/org/apache/commons/lang/ArrayUtils.java" />
+        <option value="$PROJECT_DIR$/src/main/java/com/hbase/exception/HBaseException.java" />
         <option value="$PROJECT_DIR$/src/main/java/com/hbase/HbaseUtils.java" />
+        <option value="$PROJECT_DIR$/src/main/java/com/hbase/entity/jdbc/PageCondition.java" />
+        <option value="$PROJECT_DIR$/build.gradle" />
+        <option value="$PROJECT_DIR$/src/main/java/com/hbase/entity/Lpn.java" />
+        <option value="$PROJECT_DIR$/src/test/java/com/hbase/JsonTest.java" />
+        <option value="$PROJECT_DIR$/src/test/java/com/hbase/HbaseUtilsTest.java" />
+        <option value="$PROJECT_DIR$/src/test/java/com/hbase/HbaseTest.java" />
+        <option value="$PROJECT_DIR$/src/main/java/com/hbase/utils/Lpn.java" />
       </list>
     </option>
   </component>
@@ -590,10 +591,10 @@
     </treeState>
   </component>
   <component name="ProjectFrameBounds" extendedState="6">
-    <option name="x" value="-8" />
-    <option name="y" value="-8" />
-    <option name="width" value="1936" />
-    <option name="height" value="1056" />
+    <option name="x" value="-9" />
+    <option name="y" value="-9" />
+    <option name="width" value="1938" />
+    <option name="height" value="1050" />
   </component>
   <component name="ProjectInspectionProfilesVisibleTreeState">
     <entry key="Project Default">
@@ -690,47 +691,77 @@
         <subPane>
           <expand>
             <path>
-              <item name="test" type="b2602c69:ProjectViewProjectNode" />
+              <item name="hbase" type="b2602c69:ProjectViewProjectNode" />
               <item name="Hbase" type="8a07ba80:GradleTreeStructureProvider$GradleModuleDirectoryNode" />
             </path>
             <path>
-              <item name="test" type="b2602c69:ProjectViewProjectNode" />
+              <item name="hbase" type="b2602c69:ProjectViewProjectNode" />
               <item name="Hbase" type="8a07ba80:GradleTreeStructureProvider$GradleModuleDirectoryNode" />
               <item name="src" type="462c0819:PsiDirectoryNode" />
             </path>
             <path>
-              <item name="test" type="b2602c69:ProjectViewProjectNode" />
+              <item name="hbase" type="b2602c69:ProjectViewProjectNode" />
               <item name="Hbase" type="8a07ba80:GradleTreeStructureProvider$GradleModuleDirectoryNode" />
               <item name="src" type="462c0819:PsiDirectoryNode" />
               <item name="main" type="8a07ba80:GradleTreeStructureProvider$GradleModuleDirectoryNode" />
             </path>
             <path>
-              <item name="test" type="b2602c69:ProjectViewProjectNode" />
+              <item name="hbase" type="b2602c69:ProjectViewProjectNode" />
               <item name="Hbase" type="8a07ba80:GradleTreeStructureProvider$GradleModuleDirectoryNode" />
               <item name="src" type="462c0819:PsiDirectoryNode" />
               <item name="main" type="8a07ba80:GradleTreeStructureProvider$GradleModuleDirectoryNode" />
               <item name="java" type="462c0819:PsiDirectoryNode" />
             </path>
             <path>
-              <item name="test" type="b2602c69:ProjectViewProjectNode" />
+              <item name="hbase" type="b2602c69:ProjectViewProjectNode" />
+              <item name="Hbase" type="8a07ba80:GradleTreeStructureProvider$GradleModuleDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+              <item name="main" type="8a07ba80:GradleTreeStructureProvider$GradleModuleDirectoryNode" />
+              <item name="java" type="462c0819:PsiDirectoryNode" />
+              <item name="hbase" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="hbase" type="b2602c69:ProjectViewProjectNode" />
+              <item name="Hbase" type="8a07ba80:GradleTreeStructureProvider$GradleModuleDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+              <item name="main" type="8a07ba80:GradleTreeStructureProvider$GradleModuleDirectoryNode" />
+              <item name="java" type="462c0819:PsiDirectoryNode" />
+              <item name="hbase" type="462c0819:PsiDirectoryNode" />
+              <item name="entity" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="hbase" type="b2602c69:ProjectViewProjectNode" />
+              <item name="Hbase" type="8a07ba80:GradleTreeStructureProvider$GradleModuleDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+              <item name="main" type="8a07ba80:GradleTreeStructureProvider$GradleModuleDirectoryNode" />
+              <item name="java" type="462c0819:PsiDirectoryNode" />
+              <item name="hbase" type="462c0819:PsiDirectoryNode" />
+              <item name="utils" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="hbase" type="b2602c69:ProjectViewProjectNode" />
               <item name="Hbase" type="8a07ba80:GradleTreeStructureProvider$GradleModuleDirectoryNode" />
               <item name="src" type="462c0819:PsiDirectoryNode" />
               <item name="test" type="8a07ba80:GradleTreeStructureProvider$GradleModuleDirectoryNode" />
             </path>
             <path>
-              <item name="test" type="b2602c69:ProjectViewProjectNode" />
+              <item name="hbase" type="b2602c69:ProjectViewProjectNode" />
               <item name="Hbase" type="8a07ba80:GradleTreeStructureProvider$GradleModuleDirectoryNode" />
               <item name="src" type="462c0819:PsiDirectoryNode" />
               <item name="test" type="8a07ba80:GradleTreeStructureProvider$GradleModuleDirectoryNode" />
               <item name="java" type="462c0819:PsiDirectoryNode" />
             </path>
             <path>
-              <item name="test" type="b2602c69:ProjectViewProjectNode" />
+              <item name="hbase" type="b2602c69:ProjectViewProjectNode" />
               <item name="Hbase" type="8a07ba80:GradleTreeStructureProvider$GradleModuleDirectoryNode" />
               <item name="src" type="462c0819:PsiDirectoryNode" />
               <item name="test" type="8a07ba80:GradleTreeStructureProvider$GradleModuleDirectoryNode" />
               <item name="java" type="462c0819:PsiDirectoryNode" />
               <item name="hbase" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="hbase" type="b2602c69:ProjectViewProjectNode" />
+              <item name="External Libraries" type="cb654da1:ExternalLibrariesNode" />
             </path>
           </expand>
           <select />
@@ -838,16 +869,19 @@
     </panes>
   </component>
   <component name="PropertiesComponent">
-    <property name="settings.editor.selected.configurable" value="database.data.csv.formats" />
+    <property name="settings.editor.selected.configurable" value="fileTemplates" />
     <property name="nodejs_interpreter_path" value="C:/Program Files/nodejs/node" />
     <property name="WebServerToolWindowFactoryState" value="false" />
     <property name="aspect.path.notification.shown" value="true" />
-    <property name="SearchEverywhereHistoryKey" value="Jdbc&#9;FILE&#9;jar://C:/Users/Administrator/.gradle/caches/modules-2/files-2.1/org.springframework/spring-jdbc/4.3.9.RELEASE/b13466d6ec473e5381aed30e08721a181492d5a1/spring-jdbc-4.3.9.RELEASE-sources.jar!/org/springframework/jdbc/core/JdbcTemplate.java&#10;JdbcT&#9;PSI&#9;JAVA://org.springframework.jdbc.core.JdbcTemplate&#10;AggregateImplementation&#9;PSI&#9;JAVA://org.apache.hadoop.hbase.coprocessor.AggregateImplementation&#10;Scan&#9;PSI&#9;JAVA://org.apache.hadoop.hbase.client.Scan" />
+    <property name="SearchEverywhereHistoryKey" value="Spring&#9;FILE&#9;file://H:/Hbase/src/main/resources/spring.xml&#10;Jdbc&#9;FILE&#9;jar://C:/Users/Administrator/.gradle/caches/modules-2/files-2.1/org.springframework/spring-jdbc/4.3.9.RELEASE/b13466d6ec473e5381aed30e08721a181492d5a1/spring-jdbc-4.3.9.RELEASE-sources.jar!/org/springframework/jdbc/core/JdbcTemplate.java&#10;JdbcT&#9;PSI&#9;JAVA://org.springframework.jdbc.core.JdbcTemplate&#10;AggregateImplementation&#9;PSI&#9;JAVA://org.apache.hadoop.hbase.coprocessor.AggregateImplementation&#10;Scan&#9;PSI&#9;JAVA://org.apache.hadoop.hbase.client.Scan" />
     <property name="extract.method.default.visibility" value="private" />
     <property name="last_opened_file_path" value="$MAVEN_REPOSITORY$/mysql/mysql-connector-java/5.1.30/mysql-connector-java-5.1.30.jar" />
     <property name="two.files.diff.last.used.file" value="$PROJECT_DIR$/src/main/resources/commons-logging.properties" />
     <property name="com.intellij.testIntegration.createTest.CreateTestDialog.defaultLibrary" value="JUnit4" />
     <property name="com.intellij.database.dataSource.DataSourceTemplate" value="MySQL" />
+    <property name="project.structure.last.edited" value="Libraries" />
+    <property name="project.structure.proportion" value="0.0" />
+    <property name="project.structure.side.proportion" value="0.0" />
   </component>
   <component name="RecentsManager">
     <key name="CreateTestDialog.RecentsKey">
@@ -881,15 +915,109 @@
       </list>
     </option>
   </component>
-  <component name="RunManager" selected="JUnit.HbaseUtilsTest.scanTableByCondition">
-    <configuration name="HbaseConditionEntity" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+  <component name="RunManager" selected="Application.HbaseTest">
+    <configuration name="HbaseTest" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
       <extension name="coverage" enabled="false" merge="false" sample_coverage="true" runner="idea">
         <pattern>
-          <option name="PATTERN" value="com.hbase.entity.*" />
+          <option name="PATTERN" value="com.hbase.*" />
           <option name="ENABLED" value="true" />
         </pattern>
       </extension>
-      <option name="MAIN_CLASS_NAME" value="com.hbase.entity.HbaseConditionEntity" />
+      <option name="MAIN_CLASS_NAME" value="com.hbase.HbaseTest" />
+      <option name="VM_PARAMETERS" />
+      <option name="PROGRAM_PARAMETERS" />
+      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$" />
+      <option name="ALTERNATIVE_JRE_PATH_ENABLED" value="false" />
+      <option name="ALTERNATIVE_JRE_PATH" />
+      <option name="ENABLE_SWING_INSPECTOR" value="false" />
+      <option name="ENV_VARIABLES" />
+      <option name="PASS_PARENT_ENVS" value="true" />
+      <module name="hbase_test" />
+      <envs />
+    </configuration>
+    <configuration name="HbaseUtilsTest.createTalble" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+      <extension name="coverage" enabled="false" merge="false" sample_coverage="true" runner="idea">
+        <pattern>
+          <option name="PATTERN" value="com.hbase.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <module name="hbase_test" />
+      <option name="ALTERNATIVE_JRE_PATH_ENABLED" value="false" />
+      <option name="ALTERNATIVE_JRE_PATH" />
+      <option name="PACKAGE_NAME" value="com.hbase" />
+      <option name="MAIN_CLASS_NAME" value="com.hbase.HbaseUtilsTest" />
+      <option name="METHOD_NAME" value="createTalble" />
+      <option name="TEST_OBJECT" value="method" />
+      <option name="VM_PARAMETERS" value="-ea" />
+      <option name="PARAMETERS" />
+      <option name="WORKING_DIRECTORY" value="file://$PROJECT_DIR$" />
+      <option name="ENV_VARIABLES" />
+      <option name="PASS_PARENT_ENVS" value="true" />
+      <option name="TEST_SEARCH_SCOPE">
+        <value defaultName="singleModule" />
+      </option>
+      <envs />
+      <patterns />
+    </configuration>
+    <configuration name="HbaseUtilsTest.deleteTable" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+      <extension name="coverage" enabled="false" merge="false" sample_coverage="true" runner="idea">
+        <pattern>
+          <option name="PATTERN" value="com.hbase.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <module name="hbase_test" />
+      <option name="ALTERNATIVE_JRE_PATH_ENABLED" value="false" />
+      <option name="ALTERNATIVE_JRE_PATH" />
+      <option name="PACKAGE_NAME" value="com.hbase" />
+      <option name="MAIN_CLASS_NAME" value="com.hbase.HbaseUtilsTest" />
+      <option name="METHOD_NAME" value="deleteTable" />
+      <option name="TEST_OBJECT" value="method" />
+      <option name="VM_PARAMETERS" value="-ea" />
+      <option name="PARAMETERS" />
+      <option name="WORKING_DIRECTORY" value="file://$PROJECT_DIR$" />
+      <option name="ENV_VARIABLES" />
+      <option name="PASS_PARENT_ENVS" value="true" />
+      <option name="TEST_SEARCH_SCOPE">
+        <value defaultName="singleModule" />
+      </option>
+      <envs />
+      <patterns />
+    </configuration>
+    <configuration name="JsonTest.test2" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+      <extension name="coverage" enabled="false" merge="false" sample_coverage="true" runner="idea">
+        <pattern>
+          <option name="PATTERN" value="com.hbase.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <module name="hbase_test" />
+      <option name="ALTERNATIVE_JRE_PATH_ENABLED" value="false" />
+      <option name="ALTERNATIVE_JRE_PATH" />
+      <option name="PACKAGE_NAME" value="com.hbase" />
+      <option name="MAIN_CLASS_NAME" value="com.hbase.JsonTest" />
+      <option name="METHOD_NAME" value="test2" />
+      <option name="TEST_OBJECT" value="method" />
+      <option name="VM_PARAMETERS" value="-ea" />
+      <option name="PARAMETERS" />
+      <option name="WORKING_DIRECTORY" value="file://$PROJECT_DIR$" />
+      <option name="ENV_VARIABLES" />
+      <option name="PASS_PARENT_ENVS" value="true" />
+      <option name="TEST_SEARCH_SCOPE">
+        <value defaultName="singleModule" />
+      </option>
+      <envs />
+      <patterns />
+    </configuration>
+    <configuration name="Lpn" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+      <extension name="coverage" enabled="false" merge="false" sample_coverage="true" runner="idea">
+        <pattern>
+          <option name="PATTERN" value="com.hbase.utils.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <option name="MAIN_CLASS_NAME" value="com.hbase.utils.Lpn" />
       <option name="VM_PARAMETERS" />
       <option name="PROGRAM_PARAMETERS" />
       <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$" />
@@ -900,106 +1028,6 @@
       <option name="PASS_PARENT_ENVS" value="true" />
       <module name="hbase_main" />
       <envs />
-    </configuration>
-    <configuration name="HbaseUtilsTest.delete" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
-      <extension name="coverage" enabled="false" merge="false" sample_coverage="true" runner="idea">
-        <pattern>
-          <option name="PATTERN" value="com.hbase.*" />
-          <option name="ENABLED" value="true" />
-        </pattern>
-      </extension>
-      <module name="hbase_test" />
-      <option name="ALTERNATIVE_JRE_PATH_ENABLED" value="false" />
-      <option name="ALTERNATIVE_JRE_PATH" />
-      <option name="PACKAGE_NAME" value="com.hbase" />
-      <option name="MAIN_CLASS_NAME" value="com.hbase.HbaseUtilsTest" />
-      <option name="METHOD_NAME" value="delete" />
-      <option name="TEST_OBJECT" value="method" />
-      <option name="VM_PARAMETERS" value="-ea" />
-      <option name="PARAMETERS" />
-      <option name="WORKING_DIRECTORY" value="file://$PROJECT_DIR$" />
-      <option name="ENV_VARIABLES" />
-      <option name="PASS_PARENT_ENVS" value="true" />
-      <option name="TEST_SEARCH_SCOPE">
-        <value defaultName="singleModule" />
-      </option>
-      <envs />
-      <patterns />
-    </configuration>
-    <configuration name="HbaseUtilsTest.insert" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
-      <extension name="coverage" enabled="false" merge="false" sample_coverage="true" runner="idea">
-        <pattern>
-          <option name="PATTERN" value="com.hbase.*" />
-          <option name="ENABLED" value="true" />
-        </pattern>
-      </extension>
-      <module name="hbase_test" />
-      <option name="ALTERNATIVE_JRE_PATH_ENABLED" value="false" />
-      <option name="ALTERNATIVE_JRE_PATH" />
-      <option name="PACKAGE_NAME" value="com.hbase" />
-      <option name="MAIN_CLASS_NAME" value="com.hbase.HbaseUtilsTest" />
-      <option name="METHOD_NAME" value="insert" />
-      <option name="TEST_OBJECT" value="method" />
-      <option name="VM_PARAMETERS" value="-ea" />
-      <option name="PARAMETERS" />
-      <option name="WORKING_DIRECTORY" value="file://$PROJECT_DIR$" />
-      <option name="ENV_VARIABLES" />
-      <option name="PASS_PARENT_ENVS" value="true" />
-      <option name="TEST_SEARCH_SCOPE">
-        <value defaultName="singleModule" />
-      </option>
-      <envs />
-      <patterns />
-    </configuration>
-    <configuration name="HbaseUtilsTest.scanTable" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
-      <extension name="coverage" enabled="false" merge="false" sample_coverage="true" runner="idea">
-        <pattern>
-          <option name="PATTERN" value="com.hbase.*" />
-          <option name="ENABLED" value="true" />
-        </pattern>
-      </extension>
-      <module name="hbase_test" />
-      <option name="ALTERNATIVE_JRE_PATH_ENABLED" value="false" />
-      <option name="ALTERNATIVE_JRE_PATH" />
-      <option name="PACKAGE_NAME" value="com.hbase" />
-      <option name="MAIN_CLASS_NAME" value="com.hbase.HbaseUtilsTest" />
-      <option name="METHOD_NAME" value="scanTable" />
-      <option name="TEST_OBJECT" value="method" />
-      <option name="VM_PARAMETERS" value="-ea" />
-      <option name="PARAMETERS" />
-      <option name="WORKING_DIRECTORY" value="file://$PROJECT_DIR$" />
-      <option name="ENV_VARIABLES" />
-      <option name="PASS_PARENT_ENVS" value="true" />
-      <option name="TEST_SEARCH_SCOPE">
-        <value defaultName="singleModule" />
-      </option>
-      <envs />
-      <patterns />
-    </configuration>
-    <configuration name="HbaseUtilsTest.scanTableByCondition" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
-      <extension name="coverage" enabled="false" merge="false" sample_coverage="true" runner="idea">
-        <pattern>
-          <option name="PATTERN" value="com.hbase.*" />
-          <option name="ENABLED" value="true" />
-        </pattern>
-      </extension>
-      <module name="hbase_test" />
-      <option name="ALTERNATIVE_JRE_PATH_ENABLED" value="false" />
-      <option name="ALTERNATIVE_JRE_PATH" />
-      <option name="PACKAGE_NAME" value="com.hbase" />
-      <option name="MAIN_CLASS_NAME" value="com.hbase.HbaseUtilsTest" />
-      <option name="METHOD_NAME" value="scanTableByCondition" />
-      <option name="TEST_OBJECT" value="method" />
-      <option name="VM_PARAMETERS" value="-ea" />
-      <option name="PARAMETERS" />
-      <option name="WORKING_DIRECTORY" value="file://$PROJECT_DIR$" />
-      <option name="ENV_VARIABLES" />
-      <option name="PASS_PARENT_ENVS" value="true" />
-      <option name="TEST_SEARCH_SCOPE">
-        <value defaultName="singleModule" />
-      </option>
-      <envs />
-      <patterns />
     </configuration>
     <configuration default="true" type="Applet" factoryName="Applet">
       <option name="HTML_USED" value="false" />
@@ -1095,19 +1123,19 @@
       <listeners />
     </configuration>
     <list size="5">
-      <item index="0" class="java.lang.String" itemvalue="JUnit.HbaseUtilsTest.scanTable" />
-      <item index="1" class="java.lang.String" itemvalue="Application.HbaseConditionEntity" />
-      <item index="2" class="java.lang.String" itemvalue="JUnit.HbaseUtilsTest.scanTableByCondition" />
-      <item index="3" class="java.lang.String" itemvalue="JUnit.HbaseUtilsTest.delete" />
-      <item index="4" class="java.lang.String" itemvalue="JUnit.HbaseUtilsTest.insert" />
+      <item index="0" class="java.lang.String" itemvalue="JUnit.HbaseUtilsTest.deleteTable" />
+      <item index="1" class="java.lang.String" itemvalue="JUnit.HbaseUtilsTest.createTalble" />
+      <item index="2" class="java.lang.String" itemvalue="JUnit.JsonTest.test2" />
+      <item index="3" class="java.lang.String" itemvalue="Application.HbaseTest" />
+      <item index="4" class="java.lang.String" itemvalue="Application.Lpn" />
     </list>
     <recent_temporary>
       <list size="5">
-        <item index="0" class="java.lang.String" itemvalue="JUnit.HbaseUtilsTest.scanTableByCondition" />
-        <item index="1" class="java.lang.String" itemvalue="JUnit.HbaseUtilsTest.insert" />
-        <item index="2" class="java.lang.String" itemvalue="JUnit.HbaseUtilsTest.delete" />
-        <item index="3" class="java.lang.String" itemvalue="JUnit.HbaseUtilsTest.scanTable" />
-        <item index="4" class="java.lang.String" itemvalue="Application.HbaseConditionEntity" />
+        <item index="0" class="java.lang.String" itemvalue="Application.HbaseTest" />
+        <item index="1" class="java.lang.String" itemvalue="Application.Lpn" />
+        <item index="2" class="java.lang.String" itemvalue="JUnit.HbaseUtilsTest.createTalble" />
+        <item index="3" class="java.lang.String" itemvalue="JUnit.HbaseUtilsTest.deleteTable" />
+        <item index="4" class="java.lang.String" itemvalue="JUnit.JsonTest.test2" />
       </list>
     </recent_temporary>
   </component>
@@ -1135,7 +1163,7 @@
       <workItem from="1501744291520" duration="37000" />
       <workItem from="1501745376004" duration="271000" />
       <workItem from="1501745683467" duration="10363000" />
-      <workItem from="1501807777475" duration="36212000" />
+      <workItem from="1501807777475" duration="51797000" />
     </task>
     <task id="LOCAL-00001" summary="db">
       <created>1501667313585</created>
@@ -1179,43 +1207,50 @@
       <option name="project" value="LOCAL" />
       <updated>1502067826498</updated>
     </task>
-    <option name="localTasksCounter" value="7" />
+    <task id="LOCAL-00007" summary="hbase 保存类型">
+      <created>1502076016840</created>
+      <option name="number" value="00007" />
+      <option name="presentableId" value="LOCAL-00007" />
+      <option name="project" value="LOCAL" />
+      <updated>1502076016840</updated>
+    </task>
+    <option name="localTasksCounter" value="8" />
     <servers />
   </component>
   <component name="TestHistory">
-    <history-entry file="HbaseUtilsTest_delete - 2017.08.07 at 10h 50m 25s.xml">
-      <configuration name="HbaseUtilsTest.delete" configurationId="JUnit" />
+    <history-entry file="HbaseUtilsTest_createTalble - 2017.08.07 at 16h 45m 26s.xml">
+      <configuration name="HbaseUtilsTest.createTalble" configurationId="JUnit" />
     </history-entry>
-    <history-entry file="HbaseUtilsTest_delete - 2017.08.07 at 10h 51m 00s.xml">
-      <configuration name="HbaseUtilsTest.delete" configurationId="JUnit" />
+    <history-entry file="HbaseUtilsTest_createTalble - 2017.08.07 at 16h 52m 56s.xml">
+      <configuration name="HbaseUtilsTest.createTalble" configurationId="JUnit" />
     </history-entry>
-    <history-entry file="HbaseUtilsTest_delete - 2017.08.07 at 11h 18m 28s.xml">
-      <configuration name="HbaseUtilsTest.delete" configurationId="JUnit" />
+    <history-entry file="HbaseUtilsTest_deleteTable - 2017.08.07 at 16h 30m 08s.xml">
+      <configuration name="HbaseUtilsTest.deleteTable" configurationId="JUnit" />
     </history-entry>
-    <history-entry file="HbaseUtilsTest_insert - 2017.08.07 at 10h 52m 11s.xml">
-      <configuration name="HbaseUtilsTest.insert" configurationId="JUnit" />
+    <history-entry file="JsonTest_test1 - 2017.08.07 at 15h 50m 53s.xml">
+      <configuration name="JsonTest.test1" configurationId="JUnit" />
     </history-entry>
-    <history-entry file="HbaseUtilsTest_insert - 2017.08.07 at 11h 18m 40s.xml">
-      <configuration name="HbaseUtilsTest.insert" configurationId="JUnit" />
+    <history-entry file="JsonTest_test1 - 2017.08.07 at 15h 53m 31s.xml">
+      <configuration name="JsonTest.test1" configurationId="JUnit" />
     </history-entry>
-    <history-entry file="HbaseUtilsTest_scanTable - 2017.08.07 at 10h 10m 28s.xml">
-      <configuration name="HbaseUtilsTest.scanTable" configurationId="JUnit" />
+    <history-entry file="JsonTest_test1 - 2017.08.07 at 15h 55m 53s.xml">
+      <configuration name="JsonTest.test1" configurationId="JUnit" />
     </history-entry>
-    <history-entry file="HbaseUtilsTest_scanTable - 2017.08.07 at 10h 10m 52s.xml">
-      <configuration name="HbaseUtilsTest.scanTable" configurationId="JUnit" />
+    <history-entry file="JsonTest_test2 - 2017.08.07 at 15h 43m 22s.xml">
+      <configuration name="JsonTest.test2" configurationId="JUnit" />
     </history-entry>
-    <history-entry file="HbaseUtilsTest_scanTable - 2017.08.07 at 10h 52m 58s.xml">
-      <configuration name="HbaseUtilsTest.scanTable" configurationId="JUnit" />
+    <history-entry file="JsonTest_test2 - 2017.08.07 at 16h 20m 53s.xml">
+      <configuration name="JsonTest.test2" configurationId="JUnit" />
     </history-entry>
-    <history-entry file="HbaseUtilsTest_scanTableByCondition - 2017.08.07 at 10h 36m 53s.xml">
-      <configuration name="HbaseUtilsTest.scanTableByCondition" configurationId="JUnit" />
+    <history-entry file="JsonTest_test2 - 2017.08.07 at 16h 21m 38s.xml">
+      <configuration name="JsonTest.test2" configurationId="JUnit" />
     </history-entry>
-    <history-entry file="HbaseUtilsTest_scanTableByCondition - 2017.08.07 at 11h 19m 27s.xml">
-      <configuration name="HbaseUtilsTest.scanTableByCondition" configurationId="JUnit" />
+    <history-entry file="JsonTest_test3 - 2017.08.07 at 16h 21m 28s.xml">
+      <configuration name="JsonTest.test3" configurationId="JUnit" />
     </history-entry>
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="122859000" />
+    <option name="totallyTimeSpent" value="138444000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="-9" y="-9" width="1938" height="1050" extended-state="6" />
@@ -1228,19 +1263,22 @@
       <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.4290579" sideWeight="0.50214595" order="7" side_tool="true" content_ui="tabs" />
       <window_info id="Redis Servers" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.3299356" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
       <window_info id="Maven Projects" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.3299356" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
-      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.5300795" sideWeight="0.49785408" order="2" side_tool="false" content_ui="tabs" />
-      <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.3058306" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
+      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.3813848" sideWeight="0.49785408" order="2" side_tool="false" content_ui="tabs" />
+      <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.40295118" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Spring" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="8" side_tool="false" content_ui="tabs" />
-      <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
+      <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.3291714" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
+      <window_info id="Dependency Viewer" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.60839957" sideWeight="0.5" order="-1" side_tool="false" content_ui="tabs" />
       <window_info id="Database Console" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.5720772" sideWeight="0.5" order="-1" side_tool="false" content_ui="tabs" />
       <window_info id="Designer" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
-      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.19098713" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
+      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.27736053" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
       <window_info id="ZooKeeper" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.2306867" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Database" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.3299356" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
+      <window_info id="Find" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32893288" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Gradle" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.3299356" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
-      <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.46864685" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
+      <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.46765038" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Favorites" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="true" content_ui="tabs" />
+      <window_info id="DSM" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="FLOATING" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="-1" side_tool="false" content_ui="tabs" x="91" y="91" width="1738" height="850" />
       <window_info id="Cvs" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
       <window_info id="Message" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
       <window_info id="Commander" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.4" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
@@ -1250,7 +1288,6 @@
       <window_info id="Image Layers" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Capture Analysis" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Inspection" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.4" sideWeight="0.5" order="5" side_tool="false" content_ui="tabs" />
-      <window_info id="Find" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32893288" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Theme Preview" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
     </layout>
   </component>
@@ -1307,184 +1344,16 @@
     <MESSAGE value="数据库访问修改" />
     <MESSAGE value="获取数据有返回" />
     <MESSAGE value="test提交" />
-    <option name="LAST_COMMIT_MESSAGE" value="test提交" />
+    <MESSAGE value="hbase 保存类型" />
+    <option name="LAST_COMMIT_MESSAGE" value="hbase 保存类型" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
-      <option name="time" value="10" />
+      <option name="time" value="13" />
     </breakpoint-manager>
     <watches-manager />
   </component>
   <component name="editorHistoryManager">
-    <entry file="jar://$USER_HOME$/.gradle/caches/modules-2/files-2.1/commons-collections/commons-collections/3.2.2/78c50ebda5784937ca1615fc0e1d0cb35857d572/commons-collections-3.2.2-sources.jar!/org/apache/commons/collections/map/UnmodifiableMap.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="218">
-          <caret line="57" column="22" lean-forward="false" selection-start-line="57" selection-start-column="22" selection-end-line="57" selection-end-column="22" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="jar://$USER_HOME$/.gradle/caches/modules-2/files-2.1/commons-collections/commons-collections/3.2.2/78c50ebda5784937ca1615fc0e1d0cb35857d572/commons-collections-3.2.2-sources.jar!/org/apache/commons/collections/MapUtils.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="218">
-          <caret line="95" column="60" lean-forward="false" selection-start-line="95" selection-start-column="60" selection-end-line="95" selection-end-column="60" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="jar://C:/Program Files/Java/jdk1.8.0_121/src.zip!/java/util/Map.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="9074">
-          <caret line="617" column="17" lean-forward="false" selection-start-line="617" selection-start-column="17" selection-end-line="617" selection-end-column="17" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="jar://$USER_HOME$/.gradle/caches/modules-2/files-2.1/org.springframework/spring-jdbc/4.3.9.RELEASE/b13466d6ec473e5381aed30e08721a181492d5a1/spring-jdbc-4.3.9.RELEASE-sources.jar!/org/springframework/jdbc/core/PreparedStatementCreator.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="475">
-          <caret line="47" column="55" lean-forward="true" selection-start-line="47" selection-start-column="55" selection-end-line="47" selection-end-column="55" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="jar://C:/Program Files/Java/jdk1.8.0_121/src.zip!/java/sql/PreparedStatement.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="509">
-          <caret line="446" column="9" lean-forward="false" selection-start-line="446" selection-start-column="9" selection-end-line="446" selection-end-column="9" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/resources/logback.xml">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="1215">
-          <caret line="45" column="11" lean-forward="true" selection-start-line="45" selection-start-column="11" selection-end-line="45" selection-end-column="11" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="jar://$USER_HOME$/.gradle/caches/modules-2/files-2.1/org.apache.hbase/hbase-client/1.3.1/cc81b7e8905d7a02e1d92b321a2ef3cf58137a63/hbase-client-1.3.1-sources.jar!/org/apache/hadoop/hbase/filter/CompareFilter.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="293">
-          <caret line="49" column="22" lean-forward="false" selection-start-line="49" selection-start-column="22" selection-end-line="49" selection-end-column="22" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="jar://$USER_HOME$/.gradle/caches/modules-2/files-2.1/org.springframework/spring-jdbc/4.3.9.RELEASE/b13466d6ec473e5381aed30e08721a181492d5a1/spring-jdbc-4.3.9.RELEASE-sources.jar!/org/springframework/jdbc/support/GeneratedKeyHolder.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="972">
-          <caret line="60" column="18" lean-forward="false" selection-start-line="60" selection-start-column="18" selection-end-line="60" selection-end-column="18" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/settings.gradle">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="54">
-          <caret line="2" column="0" lean-forward="true" selection-start-line="2" selection-start-column="0" selection-end-line="2" selection-end-column="0" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/build.gradle">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="324">
-          <caret line="12" column="1" lean-forward="true" selection-start-line="12" selection-start-column="1" selection-end-line="12" selection-end-column="1" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="jar://C:/Program Files/Java/jdk1.8.0_121/src.zip!/java/util/Collection.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-11594">
-          <caret line="143" column="17" lean-forward="false" selection-start-line="143" selection-start-column="17" selection-end-line="143" selection-end-column="17" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="jar://C:/Program Files/Java/jdk1.8.0_121/src.zip!/java/util/ArrayList.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="644">
-          <caret line="138" column="14" lean-forward="true" selection-start-line="138" selection-start-column="14" selection-end-line="138" selection-end-column="14" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="jar://C:/Program Files/Java/jdk1.8.0_121/src.zip!/java/util/AbstractList.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="432">
-          <caret line="67" column="13" lean-forward="true" selection-start-line="67" selection-start-column="13" selection-end-line="67" selection-end-column="13" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="jar://C:/Program Files/Java/jdk1.8.0_121/src.zip!/java/lang/String.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="293">
-          <caret line="2131" column="19" lean-forward="false" selection-start-line="2131" selection-start-column="19" selection-end-line="2131" selection-end-column="19" />
-          <folding>
-            <element signature="e#82971#82972#0" expanded="false" />
-            <element signature="e#83020#83021#0" expanded="false" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/com/hbase/entity/jdbc/Compare.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="135">
-          <caret line="5" column="8" lean-forward="false" selection-start-line="5" selection-start-column="8" selection-end-line="5" selection-end-column="8" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/com/hbase/entity/jdbc/ColumnOps.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="54">
-          <caret line="2" column="13" lean-forward="false" selection-start-line="2" selection-start-column="13" selection-end-line="2" selection-end-column="13" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/com/hbase/utils/Common.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="320">
-          <caret line="54" column="23" lean-forward="false" selection-start-line="54" selection-start-column="19" selection-end-line="54" selection-end-column="23" />
-          <folding>
-            <element signature="docComment;class#Common#0" expanded="false" />
-            <element signature="docComment;method#getMapString#0;class#Common#0" expanded="false" />
-            <element signature="method#getMapString#0;class#Common#0" expanded="false" />
-            <element signature="docComment;method#isEmpty#0;class#Common#0" expanded="false" />
-            <element signature="docComment;method#hasEmpty#0;class#Common#0" expanded="false" />
-            <element signature="docComment;method#isNumber#0;class#Common#0" expanded="false" />
-            <element signature="docComment;method#getInteger#0;class#Common#0" expanded="false" />
-            <element signature="docComment;method#getLong#0;class#Common#0" expanded="false" />
-            <element signature="docComment;method#getDouble#0;class#Common#0" expanded="false" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="jar://C:/Program Files/Java/jdk1.8.0_121/src.zip!/java/util/AbstractCollection.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="293">
-          <caret line="133" column="20" lean-forward="false" selection-start-line="133" selection-start-column="20" selection-end-line="133" selection-end-column="20" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="jar://C:/Program Files/Java/jdk1.8.0_121/src.zip!/java/util/List.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="293">
-          <caret line="169" column="13" lean-forward="false" selection-start-line="169" selection-start-column="13" selection-end-line="169" selection-end-column="13" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="jar://$USER_HOME$/.gradle/caches/modules-2/files-2.1/org.springframework/spring-jdbc/4.3.9.RELEASE/b13466d6ec473e5381aed30e08721a181492d5a1/spring-jdbc-4.3.9.RELEASE-sources.jar!/org/springframework/jdbc/core/ArgumentPreparedStatementSetter.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="117">
-          <caret line="42" column="46" lean-forward="false" selection-start-line="42" selection-start-column="44" selection-end-line="42" selection-end-column="46" />
-          <folding>
-            <element signature="e#1182#1183#0" expanded="false" />
-            <element signature="e#1205#1206#0" expanded="false" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="jar://$USER_HOME$/.gradle/caches/modules-2/files-2.1/org.springframework/spring-jdbc/4.3.9.RELEASE/b13466d6ec473e5381aed30e08721a181492d5a1/spring-jdbc-4.3.9.RELEASE-sources.jar!/org/springframework/jdbc/core/JdbcTemplate.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="-10453">
@@ -1524,14 +1393,6 @@
             <element signature="e#2716#2717#0" expanded="false" />
             <element signature="e#2765#2766#0" expanded="false" />
           </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/.gitignore">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="621">
-          <caret line="23" column="11" lean-forward="true" selection-start-line="23" selection-start-column="11" selection-end-line="23" selection-end-column="11" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -1612,30 +1473,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/com/hbase/entity/jdbc/PageCondition.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="147">
-          <caret line="27" column="35" lean-forward="false" selection-start-line="27" selection-start-column="35" selection-end-line="27" selection-end-column="35" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/com/hbase/entity/jdbc/QueryCondition.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="495">
-          <caret line="33" column="11" lean-forward="true" selection-start-line="33" selection-start-column="11" selection-end-line="33" selection-end-column="11" />
-          <folding>
-            <element signature="imports" expanded="true" />
-            <element signature="e#1040#1041#0" expanded="true" />
-            <element signature="e#1093#1094#0" expanded="true" />
-            <element signature="docComment;method#addIn#0;class#QueryCondition#0" expanded="false" />
-            <element signature="docComment;method#addBetween#0;class#QueryCondition#0" expanded="false" />
-            <element signature="docComment;method#addCondition#0;class#QueryCondition#0" expanded="false" />
-            <element signature="docComment;method#addCondition#1;class#QueryCondition#0" expanded="false" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="jar://$USER_HOME$/.gradle/caches/modules-2/files-2.1/org.springframework/spring-core/4.3.9.RELEASE/f85656c1404f6e4fddbc1ca2180748856880913f/spring-core-4.3.9.RELEASE-sources.jar!/org/springframework/util/StopWatch.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="-3954">
@@ -1665,48 +1502,6 @@
             <element signature="method#equals#0;class#UpdateParams#0" expanded="false" />
             <element signature="method#hashCode#0;class#UpdateParams#0" expanded="false" />
           </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/com/hbase/dao/BaseDao.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="513">
-          <caret line="63" column="7" lean-forward="false" selection-start-line="63" selection-start-column="7" selection-end-line="63" selection-end-column="7" />
-          <folding>
-            <element signature="docComment;class#BaseDao#0" expanded="false" />
-            <element signature="docComment;method#findById#0;class#BaseDao#0" expanded="false" />
-            <element signature="docComment;method#findCount#0;class#BaseDao#0" expanded="false" />
-            <element signature="docComment;method#find#0;class#BaseDao#0" expanded="false" />
-            <element signature="docComment;method#add#0;class#BaseDao#0" expanded="false" />
-            <element signature="docComment;method#delete#0;class#BaseDao#0" expanded="false" />
-            <element signature="docComment;method#deleteById#0;class#BaseDao#0" expanded="false" />
-            <element signature="docComment;method#update#0;class#BaseDao#0" expanded="false" />
-            <element signature="docComment;method#updateById#0;class#BaseDao#0" expanded="false" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/test/java/com/hbase/dao/impl/BaseDaoJdbcTemplateImplTest.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="270">
-          <caret line="22" column="28" lean-forward="true" selection-start-line="22" selection-start-column="28" selection-end-line="22" selection-end-column="28" />
-          <folding>
-            <element signature="method#findById#0;class#BaseDaoJdbcTemplateImplTest#0" expanded="false" />
-            <element signature="method#findCount#0;class#BaseDaoJdbcTemplateImplTest#0" expanded="false" />
-            <element signature="method#find#0;class#BaseDaoJdbcTemplateImplTest#0" expanded="false" />
-            <element signature="method#add#0;class#BaseDaoJdbcTemplateImplTest#0" expanded="false" />
-            <element signature="method#deleteById#0;class#BaseDaoJdbcTemplateImplTest#0" expanded="false" />
-            <element signature="method#update#0;class#BaseDaoJdbcTemplateImplTest#0" expanded="false" />
-            <element signature="method#updateById#0;class#BaseDaoJdbcTemplateImplTest#0" expanded="false" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/resources/spring.xml">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="594">
-          <caret line="22" column="30" lean-forward="true" selection-start-line="22" selection-start-column="30" selection-end-line="22" selection-end-column="30" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -1771,10 +1566,232 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/.gitignore">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="443">
+          <caret line="23" column="11" lean-forward="true" selection-start-line="23" selection-start-column="11" selection-end-line="23" selection-end-column="11" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="jar://$USER_HOME$/.gradle/caches/modules-2/files-2.1/commons-collections/commons-collections/3.2.2/78c50ebda5784937ca1615fc0e1d0cb35857d572/commons-collections-3.2.2-sources.jar!/org/apache/commons/collections/MapUtils.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-12891">
+          <caret line="161" column="70" lean-forward="false" selection-start-line="161" selection-start-column="70" selection-end-line="161" selection-end-column="70" />
+          <folding>
+            <element signature="method#getString#0;class#MapUtils#0" expanded="false" />
+            <element signature="method#getBoolean#0;class#MapUtils#0" expanded="false" />
+            <element signature="method#getNumber#0;class#MapUtils#0" expanded="false" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="jar://$USER_HOME$/.gradle/caches/modules-2/files-2.1/commons-lang/commons-lang/2.6/67313d715fbf0ea4fd0bdb69217fb77f807a8ce5/commons-lang-2.6-sources.jar!/org/apache/commons/lang/ArrayUtils.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="284">
+          <caret line="3185" column="26" lean-forward="false" selection-start-line="3185" selection-start-column="26" selection-end-line="3185" selection-end-column="26" />
+          <folding>
+            <element signature="e#123573#123574#0" expanded="false" />
+            <element signature="e#123630#123631#0" expanded="false" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/hbase/exception/HBaseException.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="189">
+          <caret line="11" column="0" lean-forward="true" selection-start-line="11" selection-start-column="0" selection-end-line="11" selection-end-column="0" />
+          <folding>
+            <element signature="docComment;class#HBaseException#0" expanded="false" />
+            <element signature="e#216#217#0" expanded="false" />
+            <element signature="e#246#247#0" expanded="false" />
+            <element signature="e#308#309#0" expanded="false" />
+            <element signature="e#345#346#0" expanded="false" />
+            <element signature="e#391#392#0" expanded="false" />
+            <element signature="e#419#420#0" expanded="false" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="jar://$USER_HOME$/.gradle/caches/modules-2/files-2.1/org.apache.hbase/hbase-client/1.3.1/cc81b7e8905d7a02e1d92b321a2ef3cf58137a63/hbase-client-1.3.1-sources.jar!/org/apache/hadoop/hbase/exceptions/HBaseException.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="324">
+          <caret line="28" column="9" lean-forward="false" selection-start-line="28" selection-start-column="9" selection-end-line="28" selection-end-column="9" />
+          <folding>
+            <element signature="e#1173#1174#0" expanded="false" />
+            <element signature="e#1190#1191#0" expanded="false" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/resources/spring.xml">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="548">
+          <caret line="52" column="11" lean-forward="true" selection-start-line="52" selection-start-column="11" selection-end-line="52" selection-end-column="11" />
+          <folding>
+            <element signature="e#1364#1383#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/hbase/entity/jdbc/PageCondition.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="203">
+          <caret line="14" column="28" lean-forward="true" selection-start-line="14" selection-start-column="28" selection-end-line="14" selection-end-column="28" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/hbase/entity/jdbc/QueryCondition.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="302">
+          <caret line="33" column="10" lean-forward="false" selection-start-line="33" selection-start-column="10" selection-end-line="33" selection-end-column="10" />
+          <folding>
+            <element signature="imports" expanded="true" />
+            <element signature="e#1040#1041#0" expanded="true" />
+            <element signature="e#1093#1094#0" expanded="true" />
+            <element signature="docComment;method#addIn#0;class#QueryCondition#0" expanded="false" />
+            <element signature="docComment;method#addBetween#0;class#QueryCondition#0" expanded="false" />
+            <element signature="docComment;method#addCondition#0;class#QueryCondition#0" expanded="false" />
+            <element signature="docComment;method#addCondition#1;class#QueryCondition#0" expanded="false" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="jar://$USER_HOME$/.gradle/caches/modules-2/files-2.1/org.mortbay.jetty/jetty-util/6.1.26/ca704dfc9e26567bd69ee3f065a1337fa6d296f/jetty-util-6.1.26-sources.jar!/org/mortbay/util/ajax/JSON.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="392">
+          <caret line="76" column="68" lean-forward="true" selection-start-line="76" selection-start-column="68" selection-end-line="76" selection-end-column="68" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="jar://$USER_HOME$/.gradle/caches/modules-2/files-2.1/com.google.code.gson/gson/2.2.4/a6dc5db8a12928e583bd3f23e72d3ab611ecd58f/gson-2.2.4-sources.jar!/com/google/gson/JsonObject.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="284">
+          <caret line="31" column="19" lean-forward="false" selection-start-line="31" selection-start-column="19" selection-end-line="31" selection-end-column="19" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="jar://$USER_HOME$/.gradle/caches/modules-2/files-2.1/com.google.code.gson/gson/2.2.4/a6dc5db8a12928e583bd3f23e72d3ab611ecd58f/gson-2.2.4-sources.jar!/com/google/gson/JsonElement.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-2092">
+          <caret line="32" column="22" lean-forward="false" selection-start-line="32" selection-start-column="22" selection-end-line="32" selection-end-column="22" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/build.gradle">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="594">
+          <caret line="22" column="11" lean-forward="false" selection-start-line="22" selection-start-column="11" selection-end-line="22" selection-end-column="11" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="jar://$USER_HOME$/.gradle/caches/modules-2/files-2.1/org.json/json/20170516/6d919271d0ac012fb5706abd62fd3aff0f78ed95/json-20170516-sources.jar!/org/json/JSONObject.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="1364">
+          <caret line="97" column="13" lean-forward="false" selection-start-line="97" selection-start-column="13" selection-end-line="97" selection-end-column="13" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="jar://$USER_HOME$/.gradle/caches/modules-2/files-2.1/com.alibaba/fastjson/1.2.35/4b349e67160c577202228d2f2b94e31eec1ea6e9/fastjson-1.2.35-sources.jar!/com/alibaba/fastjson/JSONArray.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-1080">
+          <caret line="49" column="13" lean-forward="false" selection-start-line="49" selection-start-column="13" selection-end-line="49" selection-end-column="13" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/test/java/com/hbase/JsonTest.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="513">
+          <caret line="99" column="0" lean-forward="true" selection-start-line="99" selection-start-column="0" selection-end-line="99" selection-end-column="0" />
+          <folding>
+            <element signature="imports" expanded="true" />
+            <element signature="method#test1#0;class#JsonTest#0" expanded="false" />
+            <element signature="method#provinceForShort#0;class#JsonTest#0" expanded="false" />
+            <element signature="e#3959#3960#0" expanded="true" />
+            <element signature="e#4012#4013#0" expanded="true" />
+            <element signature="e#4049#4050#0" expanded="true" />
+            <element signature="e#4101#4102#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="jar://$USER_HOME$/.gradle/caches/modules-2/files-2.1/com.google.guava/guava/16.0.1/2477d012cd5379f9696e0d9d3ccc62ad13a09ca4/guava-16.0.1-sources.jar!/com/google/common/collect/HashBiMap.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-6168">
+          <caret line="349" column="48" lean-forward="true" selection-start-line="349" selection-start-column="48" selection-end-line="349" selection-end-column="48" />
+          <folding>
+            <element signature="e#2410#2411#0" expanded="false" />
+            <element signature="e#2460#2461#0" expanded="false" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="jar://C:/Program Files/Java/jdk1.8.0_121/src.zip!/java/util/concurrent/ThreadPoolExecutor.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="222">
+          <caret line="318" column="31" lean-forward="false" selection-start-line="318" selection-start-column="13" selection-end-line="318" selection-end-column="31" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="jar://C:/Program Files/Java/jdk1.8.0_121/src.zip!/java/util/concurrent/Executor.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="195">
+          <caret line="126" column="3" lean-forward="true" selection-start-line="126" selection-start-column="3" selection-end-line="126" selection-end-column="3" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="jar://C:/Program Files/Java/jdk1.8.0_121/src.zip!/java/util/concurrent/Executors.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="222">
+          <caret line="87" column="23" lean-forward="true" selection-start-line="87" selection-start-column="23" selection-end-line="87" selection-end-column="23" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="jar://C:/Program Files/Java/jdk1.8.0_121/src.zip!/java/lang/Object.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="222">
+          <caret line="500" column="22" lean-forward="false" selection-start-line="500" selection-start-column="22" selection-end-line="500" selection-end-column="22" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="jar://C:/Program Files/Java/jdk1.8.0_121/src.zip!/java/util/concurrent/ExecutorService.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-5366">
+          <caret line="155" column="9" lean-forward="false" selection-start-line="155" selection-start-column="9" selection-end-line="155" selection-end-column="9" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/test/java/com/hbase/HbaseUtilsTest.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="132">
+          <caret line="26" column="56" lean-forward="true" selection-start-line="26" selection-start-column="46" selection-end-line="26" selection-end-column="56" />
+          <folding>
+            <element signature="imports" expanded="true" />
+            <element signature="method#insertList#0;class#HbaseUtilsTest#0" expanded="false" />
+            <element signature="method#insert#0;class#HbaseUtilsTest#0" expanded="false" />
+            <element signature="method#delete#0;class#HbaseUtilsTest#0" expanded="false" />
+            <element signature="method#scanTable#0;class#HbaseUtilsTest#0" expanded="false" />
+            <element signature="method#scanTableByCondition#0;class#HbaseUtilsTest#0" expanded="false" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/src/main/java/com/hbase/dao/impl/BaseDaoJdbcTemplateImpl.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="27">
-          <caret line="50" column="71" lean-forward="true" selection-start-line="50" selection-start-column="71" selection-end-line="50" selection-end-column="71" />
+        <state relative-caret-position="162">
+          <caret line="27" column="36" lean-forward="false" selection-start-line="27" selection-start-column="13" selection-end-line="27" selection-end-column="36" />
           <folding>
             <element signature="docComment;class#BaseDaoJdbcTemplateImpl#0" expanded="false" />
             <element signature="docComment;method#findById#0;class#BaseDaoJdbcTemplateImpl#0" expanded="false" />
@@ -1807,21 +1824,36 @@
         </state>
       </provider>
     </entry>
+    <entry file="jar://$USER_HOME$/.gradle/caches/modules-2/files-2.1/org.springframework/spring-context/4.3.9.RELEASE/c22b7284000897b976c9ee6c12f74f6bc3a35ccc/spring-context-4.3.9.RELEASE-sources.jar!/org/springframework/context/support/AbstractApplicationContext.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="176">
+          <caret line="1075" column="18" lean-forward="false" selection-start-line="1075" selection-start-column="18" selection-end-line="1075" selection-end-column="18" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/test/java/com/hbase/HbaseTest.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="375">
+          <caret line="25" column="39" lean-forward="true" selection-start-line="25" selection-start-column="39" selection-end-line="25" selection-end-column="39" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/src/main/java/com/hbase/HbaseUtils.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="680">
-          <caret line="331" column="90" lean-forward="true" selection-start-line="331" selection-start-column="90" selection-end-line="331" selection-end-column="90" />
+        <state relative-caret-position="155">
+          <caret line="99" column="0" lean-forward="false" selection-start-line="99" selection-start-column="0" selection-end-line="99" selection-end-column="0" />
           <folding>
             <element signature="docComment;class#HbaseUtils#0" expanded="false" />
             <element signature="initializer##0;class#HbaseUtils#0" expanded="false" />
             <element signature="docComment;method#close#0;class#HbaseUtils#0" expanded="false" />
             <element signature="method#close#0;class#HbaseUtils#0" expanded="false" />
             <element signature="docComment;method#createTable#0;class#HbaseUtils#0" expanded="false" />
-            <element signature="method#createTable#0;class#HbaseUtils#0" expanded="false" />
             <element signature="docComment;method#createTable#1;class#HbaseUtils#0" expanded="false" />
-            <element signature="method#createTable#1;class#HbaseUtils#0" expanded="false" />
             <element signature="docComment;method#createNamespace#0;class#HbaseUtils#0" expanded="false" />
-            <element signature="method#createNamespace#0;class#HbaseUtils#0" expanded="false" />
             <element signature="docComment;method#deleteTable#0;class#HbaseUtils#0" expanded="false" />
             <element signature="method#deleteTable#0;class#HbaseUtils#0" expanded="false" />
             <element signature="docComment;method#descTable#0;class#HbaseUtils#0" expanded="false" />
@@ -1839,8 +1871,12 @@
             <element signature="docComment;method#insert#0;class#HbaseUtils#0" expanded="false" />
             <element signature="method#insert#0;class#HbaseUtils#0" expanded="false" />
             <element signature="docComment;method#insertDataList#0;class#HbaseUtils#0" expanded="false" />
+            <element signature="method#insertDataList#0;class#HbaseUtils#0" expanded="false" />
             <element signature="docComment;method#putColumn#0;class#HbaseUtils#0" expanded="false" />
+            <element signature="method#putColumn#0;class#HbaseUtils#0" expanded="false" />
+            <element signature="e#11947#12002#0" expanded="false" />
             <element signature="docComment;method#insertList#0;class#HbaseUtils#0" expanded="false" />
+            <element signature="method#insertList#0;class#HbaseUtils#0" expanded="false" />
             <element signature="docComment;method#insertMap#0;class#HbaseUtils#0" expanded="false" />
             <element signature="method#insertMap#0;class#HbaseUtils#0" expanded="false" />
             <element signature="docComment;method#insertMap#1;class#HbaseUtils#0" expanded="false" />
@@ -1852,7 +1888,9 @@
             <element signature="docComment;method#getData#0;class#HbaseUtils#0" expanded="false" />
             <element signature="method#getData#0;class#HbaseUtils#0" expanded="false" />
             <element signature="docComment;method#getData#1;class#HbaseUtils#0" expanded="false" />
+            <element signature="method#getData#1;class#HbaseUtils#0" expanded="false" />
             <element signature="docComment;method#scanTable#0;class#HbaseUtils#0" expanded="false" />
+            <element signature="method#scanTable#0;class#HbaseUtils#0" expanded="false" />
             <element signature="docComment;method#scanTable#1;class#HbaseUtils#0" expanded="false" />
             <element signature="docComment;method#scanByConditions#0;class#HbaseUtils#0" expanded="false" />
             <element signature="method#scanByConditions#0;class#HbaseUtils#0" expanded="false" />
@@ -1860,31 +1898,153 @@
             <element signature="method#getFilterList#0;class#HbaseUtils#0" expanded="false" />
             <element signature="docComment;method#showCell#0;class#HbaseUtils#0" expanded="false" />
             <element signature="docComment;method#getResult#0;class#HbaseUtils#0" expanded="false" />
+            <element signature="method#getResult#0;class#HbaseUtils#0" expanded="false" />
             <element signature="method#addTableCoprocessor#0;class#HbaseUtils#0" expanded="false" />
             <element signature="docComment;method#rowCount#0;class#HbaseUtils#0" expanded="false" />
             <element signature="method#rowCount#0;class#HbaseUtils#0" expanded="false" />
             <element signature="docComment;method#log#0;class#HbaseUtils#0" expanded="false" />
+            <element signature="method#main#0;class#HbaseUtils#0" expanded="false" />
           </folding>
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/test/java/com/hbase/HbaseUtilsTest.java">
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/hbase/utils/Lpn.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="528">
-          <caret line="92" column="43" lean-forward="true" selection-start-line="92" selection-start-column="43" selection-end-line="92" selection-end-column="43" />
+        <state relative-caret-position="189">
+          <caret line="7" column="11" lean-forward="true" selection-start-line="7" selection-start-column="11" selection-end-line="7" selection-end-column="11" />
           <folding>
             <element signature="imports" expanded="true" />
-            <element signature="method#insertList#0;class#HbaseUtilsTest#0" expanded="false" />
+            <element signature="initializer##0;class#Lpn#0" expanded="false" />
           </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/hbase/dao/BaseDao.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="135">
+          <caret line="15" column="17" lean-forward="false" selection-start-line="15" selection-start-column="17" selection-end-line="15" selection-end-column="17" />
+          <folding>
+            <element signature="docComment;class#BaseDao#0" expanded="false" />
+            <element signature="docComment;method#findById#0;class#BaseDao#0" expanded="false" />
+            <element signature="docComment;method#findCount#0;class#BaseDao#0" expanded="false" />
+            <element signature="docComment;method#find#0;class#BaseDao#0" expanded="false" />
+            <element signature="docComment;method#add#0;class#BaseDao#0" expanded="false" />
+            <element signature="docComment;method#delete#0;class#BaseDao#0" expanded="false" />
+            <element signature="docComment;method#deleteById#0;class#BaseDao#0" expanded="false" />
+            <element signature="docComment;method#update#0;class#BaseDao#0" expanded="false" />
+            <element signature="docComment;method#updateById#0;class#BaseDao#0" expanded="false" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/test/java/com/hbase/dao/impl/BaseDaoJdbcTemplateImplTest.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="270">
+          <caret line="22" column="28" lean-forward="false" selection-start-line="22" selection-start-column="28" selection-end-line="22" selection-end-column="28" />
+          <folding />
         </state>
       </provider>
     </entry>
   </component>
   <component name="masterDetails">
     <states>
+      <state key="ArtifactsStructureConfigurable.UI">
+        <settings>
+          <artifact-editor />
+          <splitter-proportions>
+            <option name="proportions">
+              <list>
+                <option value="0.2" />
+              </list>
+            </option>
+          </splitter-proportions>
+        </settings>
+      </state>
+      <state key="Copyright.UI">
+        <settings>
+          <last-edited>feng</last-edited>
+          <splitter-proportions>
+            <option name="proportions">
+              <list>
+                <option value="0.2" />
+              </list>
+            </option>
+          </splitter-proportions>
+        </settings>
+      </state>
+      <state key="FacetStructureConfigurable.UI">
+        <settings>
+          <last-edited>Spring</last-edited>
+          <splitter-proportions>
+            <option name="proportions">
+              <list>
+                <option value="0.2" />
+              </list>
+            </option>
+          </splitter-proportions>
+        </settings>
+      </state>
+      <state key="GlobalLibrariesConfigurable.UI">
+        <settings>
+          <splitter-proportions>
+            <option name="proportions">
+              <list>
+                <option value="0.2" />
+              </list>
+            </option>
+          </splitter-proportions>
+        </settings>
+      </state>
+      <state key="JdkListConfigurable.UI">
+        <settings>
+          <last-edited>1.7</last-edited>
+          <splitter-proportions>
+            <option name="proportions">
+              <list>
+                <option value="0.2" />
+              </list>
+            </option>
+          </splitter-proportions>
+        </settings>
+      </state>
+      <state key="ModuleStructureConfigurable.UI">
+        <settings>
+          <last-edited>hbase</last-edited>
+          <splitter-proportions>
+            <option name="proportions">
+              <list>
+                <option value="0.2" />
+              </list>
+            </option>
+          </splitter-proportions>
+        </settings>
+      </state>
       <state key="ProjectJDKs.UI">
         <settings>
           <last-edited>1.7</last-edited>
+          <splitter-proportions>
+            <option name="proportions">
+              <list>
+                <option value="0.2" />
+              </list>
+            </option>
+          </splitter-proportions>
+        </settings>
+      </state>
+      <state key="ProjectLibrariesConfigurable.UI">
+        <settings>
+          <last-edited>Gradle: org.slf4j:slf4j-log4j12:1.7.10</last-edited>
+          <splitter-proportions>
+            <option name="proportions">
+              <list>
+                <option value="0.2" />
+              </list>
+            </option>
+          </splitter-proportions>
+        </settings>
+      </state>
+      <state key="ScopeChooserConfigurable.UI">
+        <settings>
           <splitter-proportions>
             <option name="proportions">
               <list>

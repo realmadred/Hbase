@@ -25,7 +25,7 @@ public class PageCondition {
     }
 
     public PageCondition setSize(int size) {
-        if (size <= 0 || size > 100) {
+        if (size <= 0 || size > 50) {
             return this;
         }
         this.size = size;

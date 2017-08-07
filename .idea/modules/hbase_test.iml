@@ -21,6 +21,7 @@
     <orderEntry type="library" name="Gradle: com.alibaba:druid:1.1.2" level="project" />
     <orderEntry type="library" name="Gradle: mysql:mysql-connector-java:5.1.41" level="project" />
     <orderEntry type="library" name="Gradle: org.springframework:spring-context:4.3.9.RELEASE" level="project" />
+    <orderEntry type="library" name="Gradle: com.alibaba:fastjson:1.2.35" level="project" />
     <orderEntry type="library" name="Gradle: junit:junit:4.12" level="project" />
     <orderEntry type="library" name="Gradle: org.apache.tephra:tephra-api:0.12.0-incubating" level="project" />
     <orderEntry type="library" name="Gradle: org.apache.tephra:tephra-core:0.12.0-incubating" level="project" />
