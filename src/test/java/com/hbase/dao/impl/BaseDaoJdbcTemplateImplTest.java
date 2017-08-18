@@ -82,15 +82,15 @@ public class BaseDaoJdbcTemplateImplTest {
     @Test
     public void update() throws Exception {
         System.out.println(baseDao.update(USER, UpdateParams.create()
-                .addData("name", "wangwu")
-                .addCondition("name", "zhangsan")));
+                .addData("name", "zhangsan")
+                .addCondition("name", "wangwu")));
     }
 
     @Test
     public void updateById() throws Exception {
         Map<String, Object> map = new HashMap<>();
         map.put("name", "lishi66");
-        System.out.println(baseDao.updateById(USER, map, 57739));
+        System.out.println(baseDao.updateById(USER, map, 16));
     }
 
 }

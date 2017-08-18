@@ -2,18 +2,7 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="936fb7c7-38a4-4062-b7c1-33759dd91375" name="Default" comment="">
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/main/java/com/hbase/exception/DaoException.java" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/test/java/com/hbase/test/entity/BaseEntity.java" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/test/java/com/hbase/test/entity/Page.java" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/test/java/com/hbase/test/entity/User.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/modules/hbase_test.iml" afterPath="$PROJECT_DIR$/.idea/modules/hbase_test.iml" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/com/hbase/dao/BaseDao.java" afterPath="$PROJECT_DIR$/src/main/java/com/hbase/dao/BaseDao.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/com/hbase/dao/impl/BaseDaoJdbcTemplateImpl.java" afterPath="$PROJECT_DIR$/src/main/java/com/hbase/dao/impl/BaseDaoJdbcTemplateImpl.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/com/hbase/utils/Common.java" afterPath="$PROJECT_DIR$/src/main/java/com/hbase/utils/Common.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/resources/jdbc.properties" afterPath="$PROJECT_DIR$/src/main/resources/jdbc.properties" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/resources/spring.xml" afterPath="$PROJECT_DIR$/src/main/resources/spring.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/test/java/com/hbase/HbaseTest.java" afterPath="$PROJECT_DIR$/src/test/java/com/hbase/HbaseTest.java" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/test/java/com/hbase/JsonTest.java" afterPath="$PROJECT_DIR$/src/test/java/com/hbase/JsonTest.java" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/test/java/com/hbase/dao/impl/BaseDaoJdbcTemplateImplTest.java" afterPath="$PROJECT_DIR$/src/test/java/com/hbase/dao/impl/BaseDaoJdbcTemplateImplTest.java" />
     </list>
@@ -90,9 +79,22 @@
       <file leaf-file-name="BaseDaoJdbcTemplateImplTest.java" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/src/test/java/com/hbase/dao/impl/BaseDaoJdbcTemplateImplTest.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="243">
-              <caret line="22" column="4" lean-forward="false" selection-start-line="22" selection-start-column="4" selection-end-line="22" selection-end-column="4" />
+            <state relative-caret-position="462">
+              <caret line="92" column="59" lean-forward="false" selection-start-line="92" selection-start-column="59" selection-end-line="92" selection-end-column="59" />
               <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="JsonTest.java" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/test/java/com/hbase/JsonTest.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="187">
+              <caret line="162" column="20" lean-forward="false" selection-start-line="162" selection-start-column="20" selection-end-line="162" selection-end-column="20" />
+              <folding>
+                <element signature="method#test1#0;class#JsonTest#0" expanded="false" />
+                <element signature="method#provinceForShort#0;class#JsonTest#0" expanded="false" />
+              </folding>
             </state>
           </provider>
         </entry>
@@ -571,8 +573,8 @@
         <option value="$PROJECT_DIR$/src/main/resources/jdbc.properties" />
         <option value="$PROJECT_DIR$/src/main/java/com/hbase/dao/impl/BaseDaoJdbcTemplateImpl.java" />
         <option value="$PROJECT_DIR$/src/main/java/com/hbase/utils/Common.java" />
-        <option value="$PROJECT_DIR$/src/test/java/com/hbase/JsonTest.java" />
         <option value="$PROJECT_DIR$/src/test/java/com/hbase/test/entity/User.java" />
+        <option value="$PROJECT_DIR$/src/test/java/com/hbase/JsonTest.java" />
         <option value="$PROJECT_DIR$/src/test/java/com/hbase/dao/impl/BaseDaoJdbcTemplateImplTest.java" />
       </list>
     </option>
@@ -727,56 +729,6 @@
               <item name="hbase" type="b2602c69:ProjectViewProjectNode" />
               <item name="Hbase" type="8a07ba80:GradleTreeStructureProvider$GradleModuleDirectoryNode" />
               <item name="src" type="462c0819:PsiDirectoryNode" />
-              <item name="main" type="8a07ba80:GradleTreeStructureProvider$GradleModuleDirectoryNode" />
-              <item name="java" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="hbase" type="b2602c69:ProjectViewProjectNode" />
-              <item name="Hbase" type="8a07ba80:GradleTreeStructureProvider$GradleModuleDirectoryNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
-              <item name="main" type="8a07ba80:GradleTreeStructureProvider$GradleModuleDirectoryNode" />
-              <item name="java" type="462c0819:PsiDirectoryNode" />
-              <item name="hbase" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="hbase" type="b2602c69:ProjectViewProjectNode" />
-              <item name="Hbase" type="8a07ba80:GradleTreeStructureProvider$GradleModuleDirectoryNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
-              <item name="main" type="8a07ba80:GradleTreeStructureProvider$GradleModuleDirectoryNode" />
-              <item name="java" type="462c0819:PsiDirectoryNode" />
-              <item name="hbase" type="462c0819:PsiDirectoryNode" />
-              <item name="dao" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="hbase" type="b2602c69:ProjectViewProjectNode" />
-              <item name="Hbase" type="8a07ba80:GradleTreeStructureProvider$GradleModuleDirectoryNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
-              <item name="main" type="8a07ba80:GradleTreeStructureProvider$GradleModuleDirectoryNode" />
-              <item name="java" type="462c0819:PsiDirectoryNode" />
-              <item name="hbase" type="462c0819:PsiDirectoryNode" />
-              <item name="dao" type="462c0819:PsiDirectoryNode" />
-              <item name="impl" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="hbase" type="b2602c69:ProjectViewProjectNode" />
-              <item name="Hbase" type="8a07ba80:GradleTreeStructureProvider$GradleModuleDirectoryNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
-              <item name="main" type="8a07ba80:GradleTreeStructureProvider$GradleModuleDirectoryNode" />
-              <item name="java" type="462c0819:PsiDirectoryNode" />
-              <item name="hbase" type="462c0819:PsiDirectoryNode" />
-              <item name="utils" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="hbase" type="b2602c69:ProjectViewProjectNode" />
-              <item name="Hbase" type="8a07ba80:GradleTreeStructureProvider$GradleModuleDirectoryNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
-              <item name="main" type="8a07ba80:GradleTreeStructureProvider$GradleModuleDirectoryNode" />
-              <item name="resources" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="hbase" type="b2602c69:ProjectViewProjectNode" />
-              <item name="Hbase" type="8a07ba80:GradleTreeStructureProvider$GradleModuleDirectoryNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
               <item name="test" type="8a07ba80:GradleTreeStructureProvider$GradleModuleDirectoryNode" />
             </path>
             <path>
@@ -785,23 +737,6 @@
               <item name="src" type="462c0819:PsiDirectoryNode" />
               <item name="test" type="8a07ba80:GradleTreeStructureProvider$GradleModuleDirectoryNode" />
               <item name="java" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="hbase" type="b2602c69:ProjectViewProjectNode" />
-              <item name="Hbase" type="8a07ba80:GradleTreeStructureProvider$GradleModuleDirectoryNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
-              <item name="test" type="8a07ba80:GradleTreeStructureProvider$GradleModuleDirectoryNode" />
-              <item name="java" type="462c0819:PsiDirectoryNode" />
-              <item name="hbase" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="hbase" type="b2602c69:ProjectViewProjectNode" />
-              <item name="Hbase" type="8a07ba80:GradleTreeStructureProvider$GradleModuleDirectoryNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
-              <item name="test" type="8a07ba80:GradleTreeStructureProvider$GradleModuleDirectoryNode" />
-              <item name="java" type="462c0819:PsiDirectoryNode" />
-              <item name="hbase" type="462c0819:PsiDirectoryNode" />
-              <item name="impl" type="462c0819:PsiDirectoryNode" />
             </path>
           </expand>
           <select />
@@ -946,7 +881,7 @@
       </list>
     </option>
   </component>
-  <component name="RunManager" selected="JUnit.BaseDaoJdbcTemplateImplTest.add2">
+  <component name="RunManager" selected="JUnit.BaseDaoJdbcTemplateImplTest.updateById">
     <configuration name="BaseDaoJdbcTemplateImplTest.add" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
       <extension name="coverage" enabled="false" merge="false" sample_coverage="true" runner="idea">
         <pattern>
@@ -997,7 +932,7 @@
       <envs />
       <patterns />
     </configuration>
-    <configuration name="BaseDaoJdbcTemplateImplTest.find" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+    <configuration name="BaseDaoJdbcTemplateImplTest.update" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
       <extension name="coverage" enabled="false" merge="false" sample_coverage="true" runner="idea">
         <pattern>
           <option name="PATTERN" value="com.hbase.dao.impl.*" />
@@ -1009,7 +944,7 @@
       <option name="ALTERNATIVE_JRE_PATH" />
       <option name="PACKAGE_NAME" value="com.hbase.dao.impl" />
       <option name="MAIN_CLASS_NAME" value="com.hbase.dao.impl.BaseDaoJdbcTemplateImplTest" />
-      <option name="METHOD_NAME" value="find" />
+      <option name="METHOD_NAME" value="update" />
       <option name="TEST_OBJECT" value="method" />
       <option name="VM_PARAMETERS" value="-ea" />
       <option name="PARAMETERS" />
@@ -1022,7 +957,7 @@
       <envs />
       <patterns />
     </configuration>
-    <configuration name="BaseDaoJdbcTemplateImplTest.find2" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+    <configuration name="BaseDaoJdbcTemplateImplTest.updateById" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
       <extension name="coverage" enabled="false" merge="false" sample_coverage="true" runner="idea">
         <pattern>
           <option name="PATTERN" value="com.hbase.dao.impl.*" />
@@ -1034,7 +969,7 @@
       <option name="ALTERNATIVE_JRE_PATH" />
       <option name="PACKAGE_NAME" value="com.hbase.dao.impl" />
       <option name="MAIN_CLASS_NAME" value="com.hbase.dao.impl.BaseDaoJdbcTemplateImplTest" />
-      <option name="METHOD_NAME" value="find2" />
+      <option name="METHOD_NAME" value="updateById" />
       <option name="TEST_OBJECT" value="method" />
       <option name="VM_PARAMETERS" value="-ea" />
       <option name="PARAMETERS" />
@@ -1166,19 +1101,19 @@
       <listeners />
     </configuration>
     <list size="5">
-      <item index="0" class="java.lang.String" itemvalue="JUnit.BaseDaoJdbcTemplateImplTest.find" />
-      <item index="1" class="java.lang.String" itemvalue="JUnit.BaseDaoJdbcTemplateImplTest.find2" />
-      <item index="2" class="java.lang.String" itemvalue="JUnit.BaseDaoJdbcTemplateImplTest.add" />
-      <item index="3" class="java.lang.String" itemvalue="JUnit.JsonTest.test6" />
-      <item index="4" class="java.lang.String" itemvalue="JUnit.BaseDaoJdbcTemplateImplTest.add2" />
+      <item index="0" class="java.lang.String" itemvalue="JUnit.BaseDaoJdbcTemplateImplTest.add" />
+      <item index="1" class="java.lang.String" itemvalue="JUnit.JsonTest.test6" />
+      <item index="2" class="java.lang.String" itemvalue="JUnit.BaseDaoJdbcTemplateImplTest.add2" />
+      <item index="3" class="java.lang.String" itemvalue="JUnit.BaseDaoJdbcTemplateImplTest.update" />
+      <item index="4" class="java.lang.String" itemvalue="JUnit.BaseDaoJdbcTemplateImplTest.updateById" />
     </list>
     <recent_temporary>
       <list size="5">
-        <item index="0" class="java.lang.String" itemvalue="JUnit.BaseDaoJdbcTemplateImplTest.add2" />
-        <item index="1" class="java.lang.String" itemvalue="JUnit.JsonTest.test6" />
-        <item index="2" class="java.lang.String" itemvalue="JUnit.BaseDaoJdbcTemplateImplTest.add" />
-        <item index="3" class="java.lang.String" itemvalue="JUnit.BaseDaoJdbcTemplateImplTest.find2" />
-        <item index="4" class="java.lang.String" itemvalue="JUnit.BaseDaoJdbcTemplateImplTest.find" />
+        <item index="0" class="java.lang.String" itemvalue="JUnit.BaseDaoJdbcTemplateImplTest.updateById" />
+        <item index="1" class="java.lang.String" itemvalue="JUnit.BaseDaoJdbcTemplateImplTest.update" />
+        <item index="2" class="java.lang.String" itemvalue="JUnit.BaseDaoJdbcTemplateImplTest.add2" />
+        <item index="3" class="java.lang.String" itemvalue="JUnit.JsonTest.test6" />
+        <item index="4" class="java.lang.String" itemvalue="JUnit.BaseDaoJdbcTemplateImplTest.add" />
       </list>
     </recent_temporary>
   </component>
@@ -1212,7 +1147,7 @@
       <workItem from="1501745376004" duration="271000" />
       <workItem from="1501745683467" duration="10363000" />
       <workItem from="1501807777475" duration="55453000" />
-      <workItem from="1502932824172" duration="31426000" />
+      <workItem from="1502932824172" duration="32401000" />
     </task>
     <task id="LOCAL-00001" summary="db">
       <created>1501667313585</created>
@@ -1277,18 +1212,25 @@
       <option name="project" value="LOCAL" />
       <updated>1502948356769</updated>
     </task>
-    <option name="localTasksCounter" value="10" />
+    <task id="LOCAL-00010" summary="tinyint 类型自动转换为boolean问题，增加了对实体类的查询和添加">
+      <created>1503038034172</created>
+      <option name="number" value="00010" />
+      <option name="presentableId" value="LOCAL-00010" />
+      <option name="project" value="LOCAL" />
+      <updated>1503038034172</updated>
+    </task>
+    <option name="localTasksCounter" value="11" />
     <servers />
   </component>
   <component name="TestHistory">
-    <history-entry file="BaseDaoJdbcTemplateImplTest_add - 2017.08.18 at 11h 47m 21s.xml">
-      <configuration name="BaseDaoJdbcTemplateImplTest.add" configurationId="JUnit" />
-    </history-entry>
     <history-entry file="BaseDaoJdbcTemplateImplTest_add2 - 2017.08.18 at 14h 29m 54s.xml">
       <configuration name="BaseDaoJdbcTemplateImplTest.add2" configurationId="JUnit" />
     </history-entry>
-    <history-entry file="BaseDaoJdbcTemplateImplTest_find2 - 2017.08.18 at 11h 43m 50s.xml">
-      <configuration name="BaseDaoJdbcTemplateImplTest.find2" configurationId="JUnit" />
+    <history-entry file="BaseDaoJdbcTemplateImplTest_update - 2017.08.18 at 15h 10m 28s.xml">
+      <configuration name="BaseDaoJdbcTemplateImplTest.update" configurationId="JUnit" />
+    </history-entry>
+    <history-entry file="BaseDaoJdbcTemplateImplTest_updateById - 2017.08.18 at 15h 10m 58s.xml">
+      <configuration name="BaseDaoJdbcTemplateImplTest.updateById" configurationId="JUnit" />
     </history-entry>
     <history-entry file="JsonTest_test6 - 2017.08.18 at 14h 20m 19s.xml">
       <configuration name="JsonTest.test6" configurationId="JUnit" />
@@ -1313,14 +1255,13 @@
     </history-entry>
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="173526000" />
+    <option name="totallyTimeSpent" value="174501000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="-9" y="-9" width="1938" height="1050" extended-state="6" />
-    <editor active="true" />
     <layout>
       <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
-      <window_info id="Messages" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32893288" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
+      <window_info id="Messages" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32879817" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Palette&#9;" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Java Enterprise" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.4290579" sideWeight="0.50214595" order="7" side_tool="true" content_ui="tabs" />
@@ -1331,7 +1272,7 @@
       <window_info id="Spring" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="8" side_tool="false" content_ui="tabs" />
       <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.3291714" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Designer" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
-      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.21727468" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
+      <window_info id="Project" active="true" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.21727468" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
       <window_info id="Database" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.3299356" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Find" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32879817" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Gradle" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.3299356" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
@@ -1409,7 +1350,8 @@
     <MESSAGE value="test提交" />
     <MESSAGE value="hbase 保存类型" />
     <MESSAGE value="hbase 创建表 删除表 test" />
-    <option name="LAST_COMMIT_MESSAGE" value="hbase 创建表 删除表 test" />
+    <MESSAGE value="tinyint 类型自动转换为boolean问题，增加了对实体类的查询和添加" />
+    <option name="LAST_COMMIT_MESSAGE" value="tinyint 类型自动转换为boolean问题，增加了对实体类的查询和添加" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
@@ -2717,17 +2659,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/test/java/com/hbase/JsonTest.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="271">
-          <caret line="142" column="23" lean-forward="false" selection-start-line="142" selection-start-column="23" selection-end-line="142" selection-end-column="23" />
-          <folding>
-            <element signature="method#test1#0;class#JsonTest#0" expanded="false" />
-            <element signature="method#provinceForShort#0;class#JsonTest#0" expanded="false" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="jar://C:/Program Files/Java/jdk1.8.0_121/src.zip!/java/lang/Byte.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="-44">
@@ -2760,8 +2691,8 @@
         <state relative-caret-position="210">
           <caret line="1312" column="27" lean-forward="false" selection-start-line="1312" selection-start-column="27" selection-end-line="1312" selection-end-column="27" />
           <folding>
-            <element signature="e#46607#46608#0" expanded="true" />
-            <element signature="e#46645#46646#0" expanded="true" />
+            <element signature="e#46607#46608#0" expanded="false" />
+            <element signature="e#46645#46646#0" expanded="false" />
           </folding>
         </state>
       </provider>
@@ -2806,10 +2737,21 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/src/test/java/com/hbase/JsonTest.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="187">
+          <caret line="162" column="20" lean-forward="false" selection-start-line="162" selection-start-column="20" selection-end-line="162" selection-end-column="20" />
+          <folding>
+            <element signature="method#test1#0;class#JsonTest#0" expanded="false" />
+            <element signature="method#provinceForShort#0;class#JsonTest#0" expanded="false" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/src/test/java/com/hbase/dao/impl/BaseDaoJdbcTemplateImplTest.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="243">
-          <caret line="22" column="4" lean-forward="false" selection-start-line="22" selection-start-column="4" selection-end-line="22" selection-end-column="4" />
+        <state relative-caret-position="462">
+          <caret line="92" column="59" lean-forward="false" selection-start-line="92" selection-start-column="59" selection-end-line="92" selection-end-column="59" />
           <folding />
         </state>
       </provider>

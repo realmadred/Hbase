@@ -160,7 +160,7 @@ public class JsonTest {
         User user = new User();
         user.setName("zhangsan");
         user.setAge(22);
-        user.setSex((byte) 1);
+        user.setSex(1);
         user.setId(55);
         user.setStart(1);
         return user;
