@@ -160,6 +160,15 @@
     <orderEntry type="library" name="Gradle: org.apache.hadoop:hadoop-yarn-common:2.7.1" level="project" />
     <orderEntry type="library" name="Gradle: io.netty:netty:3.7.0.Final" level="project" />
     <orderEntry type="library" name="Gradle: org.apache.hadoop:hadoop-yarn-api:2.7.1" level="project" />
+    <orderEntry type="module-library">
+      <library>
+        <CLASSES>
+          <root url="jar://$APPLICATION_HOME_DIR$/redist/annotations-java8.jar!/" />
+        </CLASSES>
+        <JAVADOC />
+        <SOURCES />
+      </library>
+    </orderEntry>
   </component>
   <component name="TestModuleProperties" production-module="hbase_main" />
 </module>

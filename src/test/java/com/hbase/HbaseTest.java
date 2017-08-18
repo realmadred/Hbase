@@ -19,8 +19,8 @@ public class HbaseTest {
     private static BaseDao baseDao = new ClassPathXmlApplicationContext("spring.xml").getBean(BaseDao.class);
 
     public static void main(String[] args) {
-//        createTalble();
-        deleteTable();
+        createTalble();
+//        deleteTable();
     }
 
     public static void createTalble() {

@@ -15,7 +15,10 @@ import org.springframework.util.CollectionUtils;
 import javax.annotation.Nonnull;
 import java.sql.PreparedStatement;
 import java.sql.Statement;
-import java.util.*;
+import java.util.ArrayList;
+import java.util.Arrays;
+import java.util.List;
+import java.util.Map;
 
 import static com.hbase.dao.impl.BaseDaoJdbcTemplateImpl.KeyWord.*;
 
@@ -33,7 +36,7 @@ public class BaseDaoJdbcTemplateImpl implements BaseDao {
     @Autowired
     private JdbcTemplate template;
 
-    private static final Map<String, Object> EMPTY_MAP = new HashMap<>(0);
+    private static final Map<String, Object> EMPTY_MAP = Common.EMPTY_MAP;
     private static final List<Map<String, Object>> EMPTY_LIST = new ArrayList<>(0);
     private static final String SEPARATOR = ",";
     private static final String PARAM = "?";
@@ -56,6 +59,23 @@ public class BaseDaoJdbcTemplateImpl implements BaseDao {
                 .append(table).append(WHERE_ID);
         LOGGER.info(">>>>>>>>sql:{}\n args:{}", sql, id);
         return template.queryForMap(sql.toString(), id);
+    }
+
+    /**
+     * 根据id查询
+     * 返回制定的类型
+     * 2017-08-17 09:34:44
+     *
+     * @param table  表
+     * @param id     id
+     * @param fields 字段
+     * @param clazz
+     * @return
+     */
+    @Override
+    public <T> T findById(String table, Object id, String fields, Class<T> clazz) {
+        Map<String, Object> map = findById(table, id, fields);
+        return Common.toObject(map,clazz);
     }
 
     /**
@@ -109,6 +129,23 @@ public class BaseDaoJdbcTemplateImpl implements BaseDao {
     }
 
     /**
+     * 根据条件查询
+     *
+     * @param table     表
+     * @param fields    查询字段
+     * @param condition order by , having, group by , limit 条件
+     * @param clazz
+     * @return
+     */
+    @Override
+    public <T> List<T> find(String table, String fields, QueryCondition condition,final Class<T> clazz) {
+        final List<Map<String, Object>> maps = find(table, fields, condition);
+        final List<T> list = new ArrayList<>(maps.size());
+        maps.parallelStream().forEach(map -> list.add(Common.toObject(map,clazz)));
+        return list;
+    }
+
+    /**
      * 插入单条数据
      *
      * @param table b
@@ -147,6 +184,18 @@ public class BaseDaoJdbcTemplateImpl implements BaseDao {
         }, keyHolder);
         final Number key = keyHolder.getKey();
         return key == null ? 1 : key.intValue();
+    }
+
+    /**
+     * 插入单条数据
+     *
+     * @param table b
+     * @param obj   数据
+     * @return 自增id
+     */
+    @Override
+    public int addObj(String table, Object obj) {
+        return add(table,Common.toMap(obj));
     }
 
     /**
