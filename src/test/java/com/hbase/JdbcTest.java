@@ -37,7 +37,7 @@ public class JdbcTest {
 
     @Test
     public void getFields() throws Exception {
-        String sql = "SELECT * FROM x_car_run_log";
+        String sql = "SELECT * FROM x_car_run_log LIMIT 1";
         try (
                 Connection connection = dataSource.getConnection();
                 PreparedStatement ps = connection.prepareStatement(sql);
@@ -48,7 +48,9 @@ public class JdbcTest {
             if (count > 0) {
                 StringBuilder stringBuilder = new StringBuilder();
                 for (int i = 0; i < count; i++) {
-                    stringBuilder.append(metaData.getColumnName(i + 1));
+                    String columnName = metaData.getColumnName(i + 1);
+                    stringBuilder.append(columnName).append(" ")
+                            .append(CaseFormat.LOWER_UNDERSCORE.to(CaseFormat.LOWER_CAMEL,columnName));
                     if (i<count-1){
                         stringBuilder.append(",");
                     }
@@ -63,7 +65,7 @@ public class JdbcTest {
 
     @Test
     public void getDataPuts() throws Exception {
-        String sql = "SELECT * FROM d_topic";
+        String sql = "SELECT * FROM d_topic LIMIT 1";
         try (
                 Connection connection = dataSource.getConnection();
                 PreparedStatement ps = connection.prepareStatement(sql);
@@ -86,7 +88,7 @@ public class JdbcTest {
     @Test
     public void createBean() throws Exception {
         String table = "d_topic";// 表名
-        String sql = "SELECT * FROM "+table;
+        String sql = "SELECT * FROM "+table +" LIMIT 1";
         String sqlColumns = "show full columns from "+table;
         try (
                 Connection connection = dataSource.getConnection();
