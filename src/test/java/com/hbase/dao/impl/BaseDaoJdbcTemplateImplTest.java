@@ -26,7 +26,7 @@ public class BaseDaoJdbcTemplateImplTest {
 
     @Test
     public void findById() throws Exception {
-        System.out.println(baseDao.findById(USER, 1, "id,name,phone,sex"));
+        System.out.println(baseDao.findById(USER, 1, "id xx,name,phone,sex"));
     }
 
     @Test

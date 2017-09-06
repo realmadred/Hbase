@@ -73,21 +73,21 @@ public class JsonTest {
         else if (province.equals("海南省"))
             return "琼";
         else if (province.equals("四川省"))
-            return "川/蜀";
+            return "川";
         else if (province.equals("贵州省"))
-            return "黔/贵";
+            return "贵";
         else if (province.equals("云南省"))
-            return "云/滇";
+            return "云";
         else if (province.equals("陕西省"))
-            return "陕/秦";
+            return "陕";
         else if (province.equals("甘肃省"))
-            return "甘/陇";
+            return "甘";
         else if (province.equals("青海省"))
             return "青";
         else if (province.equals("台湾省"))
             return "台";
         else if (province.equals("内蒙古自治区"))
-            return "内蒙古";
+            return "蒙";
         else if (province.equals("广西壮族自治区"))
             return "桂";
         else if (province.equals("宁夏回族自治区"))
